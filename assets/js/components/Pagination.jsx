@@ -9,6 +9,7 @@ const Pagination = ({itemsPerPage, length, handleChangePage, currentPage}) => {
     for (let i = 1; i < pagesCount; i++) {
         pages.push(i);
       }
+      
 
 
   return (
@@ -42,10 +43,5 @@ const Pagination = ({itemsPerPage, length, handleChangePage, currentPage}) => {
           </div>
   );
 };
-
-Pagination.getData = (items, currentPage, itemsPerPage) =>{
-    const start = currentPage*itemsPerPage-itemsPerPage;
-        return items.slice(start, start + itemsPerPage);
-}
 
 export default Pagination;

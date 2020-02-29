@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
-import Productspage from './pages/Productspage';
+import ProductList from './pages/ProductList';
 import ProductPage from './pages/ProductPage';
 
 
@@ -15,8 +15,10 @@ const App = () => {
             <main className='container pt-5'>
                 <Switch>
                     <Route path="/products/:id" component={ProductPage} />
-                    <Route path="/products" component={Productspage}></Route>
+                    <Route path="/products" component={ProductList}></Route>
                     <Route path="/" component={Homepage}></Route>
+                    <Route path="/panier" component={ProductList}></Route>
+                    <Route path="/contact" component={ProductList}></Route>
                 </Switch>
                 
             </main>

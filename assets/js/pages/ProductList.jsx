@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
-import {Link} from 'react-router-dom';
 import axios from "axios";
+import Container from "react-bootstrap/Container";
+import Carousel from "react-bootstrap/Carousel";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import CardDeck from "react-bootstrap/CardDeck";
 import Pagination from '../components/Pagination';
+import { Link } from 'react-router-dom';
 
-const Productspage = () => {
+const ProductList = () => {
 
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
-
     const [currentPage, setCurrentPage] = useState(1);
-
-  const itemsPerPage = 6;
+    const itemsPerPage = 6;
 
 
     useEffect(() => {
@@ -32,16 +32,16 @@ const Productspage = () => {
       .then(data => setCategories(data));
   }, []);
 
+  const start = currentPage * itemsPerPage - itemsPerPage;
+  const paginatedProducts = products.slice(start, start + itemsPerPage);
+
   const handleChangePage = page => {
     setCurrentPage(page);
 
   };
 
-  const start = currentPage * itemsPerPage - itemsPerPage;
-    const paginatedProducts = products.slice(start, start + itemsPerPage);
     return (  
         <>
-        <h1>LISTE DES PRODUITS</h1>
         <Row>
         <Col sm={4}>
           {categories.map(category => (
@@ -52,11 +52,10 @@ const Productspage = () => {
           <CardDeck>
             {paginatedProducts.map(product => (
               <Col sm={4}>
-                <Card key={product.id} href="#">
+                <Card key={product.id}>
                   <Card.Img variant="top" src="" />
                   <Card.Body>
-                    
-                    <Card.Title><Link to={`/products/${product.id}`}>{product.name}</Link></Card.Title>
+                  <Card.Title><Link to={`/products/${product.id}`}>{product.name}</Link></Card.Title>
                     <Card.Text>{product.description}</Card.Text>
                   </Card.Body>
                   <Card.Footer>
@@ -74,4 +73,4 @@ const Productspage = () => {
     );
 }
  
-export default Productspage;
+export default ProductList;
