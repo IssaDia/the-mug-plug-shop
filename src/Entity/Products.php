@@ -56,6 +56,16 @@ class Products
      */
     private $users;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $images;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $thumbnails;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
@@ -138,6 +148,30 @@ class Products
             $this->users->removeElement($user);
             $user->removeProduct($this);
         }
+
+        return $this;
+    }
+
+    public function getImages(): ?string
+    {
+        return $this->images;
+    }
+
+    public function setImages(string $images): self
+    {
+        $this->images = $images;
+
+        return $this;
+    }
+
+    public function getThumbnails(): ?string
+    {
+        return $this->thumbnails;
+    }
+
+    public function setThumbnails(?string $thumbnails): self
+    {
+        $this->thumbnails = $thumbnails;
 
         return $this;
     }

@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../images/logo.png';
+
+var FontAwesome = require('react-fontawesome');
 
 const Navbar = (props) => {
     return ( 
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div className="container">
-      <a className="navbar-brand" href="#">Jazzy Shop</a>
+      <Link to="/" className="navbar-brand"><img height="100" width="100" src={logo} alt="Logo" /></Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" 
       aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -16,7 +19,7 @@ const Navbar = (props) => {
           <Link to="/products" className="nav-link">Produits</Link>
           </li>
           <li className="nav-item">
-            <Link to="/panier" className="btn btn-success">Panier</Link>
+            <Link to="/cart" className="btn btn-success">Panier<FontAwesome name="fas fa-cart-plus" /></Link>
           </li>
           <li className="nav-item">
           <Link to="/contact" className="nav-link">Contact</Link>
@@ -26,6 +29,7 @@ const Navbar = (props) => {
       </div>
     </div>
   </nav>
+  
      );
 }
  

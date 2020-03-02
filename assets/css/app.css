@@ -1,3 +1,13 @@
 body {
-    background-color: yellow;
+    background-color: white;
+}
+
+.fixed-top{
+    position: relative;;
+}
+
+
+
+h1 span{
+    color:rgba(255, 81, 0, 0.925);
 }
