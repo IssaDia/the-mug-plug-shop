@@ -1,13 +1,12 @@
 import React, { useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.png';
-import { getNumbers } from "../actions";
+import { getNumbers } from "../actions/getAction";
 import { connect } from "react-redux";
 
 var FontAwesome = require('react-fontawesome');
 
 const Navbar = (props) => {
-  console.log(props);
   useEffect(() => {
  getNumbers();
   }, []);
@@ -21,9 +20,6 @@ const Navbar = (props) => {
       </button>
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item active">
-          <Link to="/products" className="nav-link">Produits</Link>
-          </li>
           <li className="nav-item">
             <Link to="/cart" className="btn btn-success">Panier<FontAwesome name="fas fa-cart-plus"/><span>{props.basketProps.basketNumbers}</span></Link>
           </li>

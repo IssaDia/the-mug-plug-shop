@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-import products from './rootReducer';
-import basketReducer from './rootReducer';
+import basketReducer from './basketReducer';
+import products from './productsReducer';
 
 
-export default combineReducers({
-    products: products,
-    basketState : basketReducer
-});
+ export default combineReducers({
+    
+    basketState : basketReducer,
+    products : products
+}); 

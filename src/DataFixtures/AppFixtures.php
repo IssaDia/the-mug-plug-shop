@@ -28,7 +28,7 @@ class AppFixtures extends Fixture
     {
         $faker = Faker\Factory::create('fr_FR');
 
-        for ($i = 1; $i < 10; $i++) {
+     /*   for ($i = 1; $i < 2; $i++) {
             $user = new User();
             $hash = $this->encoder->encodePassword($user, "password");
             $user->setFirstName($faker->firstName)
@@ -37,22 +37,24 @@ class AppFixtures extends Fixture
                 ->setPassword($hash);
             $manager->persist($user);
 
-            $titles = array('T-shirts', 'Mugs', 'Posters');
-            foreach ($titles as &$title) {
+            */
+
+           
                 $category = new Category();
-                $category->setTitle($title);
+                $category->setTitle('Posters');
                 $manager->persist($category);
-                for ($j = 1; $j < 10; $j++) {
+                for ($j = 1; $j < 15; $j++) {
 
                     $product = new Products();
-                    $product->setName($title . ' ' . $j);
+                    $product->setName('Poster' . $j);
                     $product->setPrice($faker->randomFloat(2, 15, 30));
-                    $product->setDescription($faker->text);
+                    $product->setNumbers(0);
+                    $product->setInCart(false);
                     $product->setCategory($category);
                     $manager->persist($product);
                 }
-            }
-        }
+        //    }
+    
 
 
 
