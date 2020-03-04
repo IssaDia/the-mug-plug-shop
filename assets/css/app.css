@@ -11,3 +11,40 @@ body {
 h1 span{
     color:rgba(255, 81, 0, 0.925);
 }
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+
+.image{
+   
+ 
+    position: relative;
+    overflow: hidden;
+}
+
+
+.addToCart{
+    position: absolute;
+    width: fit-content;
+    background-color: darkgray;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.image:hover .cart {
+   
+    bottom: 50px;
+    opacity: 1;
+    padding: 10px;
+    text-decoration: none;
+}
+
+
+

@@ -9,27 +9,16 @@ import Cart from './components/Cart';
 import Homepage from './pages/Homepage';
 import ProductList from './pages/ProductList';
 import ProductPage from './pages/ProductPage';
-
-
-import {createStore, applyMiddleware} from "redux";
-import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import rootReducer from './reducers';
-import { fetchAllProducts } from './actions/index';
-
-const store = createStore(rootReducer, applyMiddleware(thunk));
-store.dispatch(fetchAllProducts());
+import store from './store';
 
 const App = () => {
 
-
-
     return (
-        <HashRouter>
-            <Navbar />
-            <main className='container pt-5'>
+        <HashRouter> 
                 <Switch>  
                     <Provider store={store}>
+                    <Navbar />
                     <Route path="/products/:id" component={ProductPage} />
                     <Route path="/products" component={ProductList} />
                     <Route path="/cart" component={Cart}/>
@@ -37,8 +26,7 @@ const App = () => {
                     <Route path="/" component={Homepage} />
                     </Provider>   
                     <Route component={Default} /> 
-                </Switch>  
-            </main>         
+                </Switch>          
         </HashRouter>
 );
   };
