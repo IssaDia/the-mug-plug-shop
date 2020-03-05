@@ -4,11 +4,14 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 /**
- * @ApiResource()
  * @ORM\Entity(repositoryClass="App\Repository\ProductsRepository")
- * @ApiResource
+ * @ApiResource(
+ * normalizationContext={
+ * "groups"={"product"}})
  */
 class Products
 {
@@ -21,21 +24,25 @@ class Products
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"product"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups({"product"})
      */
     private $price;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"product"})
      */
     private $numbers;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"product"})
      */
     private $inCart;
 

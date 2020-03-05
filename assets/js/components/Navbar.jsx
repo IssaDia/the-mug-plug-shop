@@ -8,7 +8,7 @@ var FontAwesome = require('react-fontawesome');
 
 const Navbar = (props) => {
   useEffect(() => {
- getNumbers();
+    getNumbers();
   }, []);
     return ( 
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">

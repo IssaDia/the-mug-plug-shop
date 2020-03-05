@@ -1,3 +1,4 @@
+
 import {
   ADD_PRODUCT_BASKET,
   GET_NUMBERS_BASKET,
@@ -8,6 +9,32 @@ import {
 const initialState = {
   basketNumbers: 0,
   cartCost: 0,
+  products: {
+    black: {
+      name: 'black',
+      price : 12.00,
+      numbers:0,
+      inCart: false
+    },
+    white: {
+      name: 'white',
+      price : 12.00,
+      numbers:0,
+      inCart: false
+    },
+    blue: {
+      name: 'blue',
+      price : 12.00,
+      numbers:0,
+      inCart: false
+    },
+    grey: {
+      name: 'grey',
+      price : 12.00,
+      numbers:0,
+      inCart: false
+    },
+  }
   
 
 }
@@ -42,3 +69,30 @@ export default (state = initialState, action) => {
           return state;
   }
 };
+
+      
+/*
+case FETCH_PRODUCTS:
+
+        
+          let products = action.products;
+          var myArray = [];
+          for(var i = 0; i < products.length; i++){
+            myArray.push(products[i].name)
+          }
+
+          
+
+          let productList = JSON.stringify(myArray);
+          let pro = productList.substring(2, productList.length - 80);
+
+          console.log(pro);
+          
+
+        return  { 
+          ...state,
+          products: [...state.products, pro]
+      };
+
+*/
+

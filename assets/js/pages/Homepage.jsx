@@ -1,50 +1,41 @@
 import React, { Component} from "react";
 import { connect } from "react-redux";
-import Title  from "../components/Title";
 import  pic1  from "../../images/pic1.jpg";
 import { addBasket } from "../actions/addAction";
 
-class Homepage extends Component {
-
-  render() {
-    const { products } = this.props;
-    console.log(this.props);
-
-    const productlist = products.map((product, index) => {
-      return (
-        
-     
-    <div className="image" key={index}>
-              <img src={pic1} height="200" width="200" className='img_homepage'></img>
-              <h3>{product.name}</h3>
-              <h3>{product.price}</h3>
-              <a onClick={()=>addBasket(product.name)}className="addToCart cart">Add to cart</a>      
-    </div>
-    
-         
-      )
-        
-    })
-
+const Homepage = (props) => {
+  return ( 
+    <div className='container'>
+    <div className='image'>
+    <h3>Black tshirt</h3>
+    <img src={pic1} alt="" height='150' width='150'></img>
+    <h3>$15,00</h3>
+    <a onClick={()=>props.addBasket('black')} className='addToCart cart1'>Add to cart</a>
+  </div>
+  <div className='image'>
+  <h3>Grey tshirt</h3>
+    <img src={pic1} alt="" height='150' width='150'></img>
+    <h3>$15,00</h3>
+    <a onClick={()=>props.addBasket('grey')} className='addToCart cart2'>Add to cart</a>
+  </div>
+  <div className='image'>
+  <h3>Blue tshirt</h3>
+    <img src={pic1} alt="" height='150' width='150'></img>
+    <h3>$15,00</h3>
+    <a onClick={()=>props.addBasket('blue')} className='addToCart cart3'>Add to cart</a>
+  </div>
+  <div className='image'>
+  <h3>White tshirt</h3>
+    <img src={pic1} alt="" height='150' width='150'></img>
+    <h3>$15,00</h3>
+    <a onClick={()=>props.addBasket('white')} className='addToCart cart4'>Add to cart</a>
+  </div>
   
-      return (
-        <div className='container'>
-        <Title name='our' title='products'></Title>
-         {productlist}
-       </div>
-      )
+ </div>
+   );
 }
-}
-
-
-const mapStateToProps = state => {
-  return {
-    products: state.products
-  };
-  };
-
-
  
-export default connect(mapStateToProps, { addBasket })(Homepage);
+
+export default connect(null, {addBasket} )(Homepage);
 
 
