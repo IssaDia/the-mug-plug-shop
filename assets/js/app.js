@@ -2,7 +2,8 @@ import '../css/app.css';
 import React from "react";
 import ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import NavbarTest from './components/NavbarTest';
+import Footer from './components/Footer';
 import Default from './components/Default';
 import Cart from './components/Cart';
 import Homepage from './pages/Homepage';
@@ -14,13 +15,14 @@ const App = () => {
     return (
       <HashRouter>
         <Provider store={store}>   
-          <Navbar />
+          <NavbarTest />
               <Switch>  
                   <Route path="/cart" component={Cart}/>
                   <Route path="/contact"/>
-                  <Route path="/" component={Homepage} />
+                  <Route path="/" component={Homepage}/>
                   <Route component={Default} /> 
-              </Switch>  
+              </Switch>
+          <Footer />
         </Provider>          
     </HashRouter> 
 
