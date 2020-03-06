@@ -1,4 +1,6 @@
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 export const ADD_PRODUCT_BASKET = 'ADD_PRODUCT_BASKET';
 export const GET_NUMBERS_BASKET = 'GET_NUMBERS_BASKET';
+export const ADD_BASKET = 'ADD_BASKET';
+
 

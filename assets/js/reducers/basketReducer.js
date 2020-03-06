@@ -10,30 +10,7 @@ const initialState = {
   basketNumbers: 0,
   cartCost: 0,
   products: {
-    black: {
-      name: 'black',
-      price : 12.00,
-      numbers:0,
-      inCart: false
-    },
-    white: {
-      name: 'white',
-      price : 12.00,
-      numbers:0,
-      inCart: false
-    },
-    blue: {
-      name: 'blue',
-      price : 12.00,
-      numbers:0,
-      inCart: false
-    },
-    grey: {
-      name: 'grey',
-      price : 12.00,
-      numbers:0,
-      inCart: false
-    },
+   
   }
   
 
@@ -41,7 +18,9 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    /*
     case ADD_PRODUCT_BASKET:
+      
       let addQuantity = {
         ...state.products[action.payload]
       }
@@ -58,7 +37,14 @@ export default (state = initialState, action) => {
             ...state.products,
             [action.payload] : addQuantity
           }
-      }
+      }  */
+
+      case ADD_PRODUCT_BASKET:
+        return {
+          ...state
+        }
+
+
       case GET_NUMBERS_BASKET:
         return {
           ...state

@@ -12,9 +12,13 @@ export const getProductsFromApi = (products) => {
 export const getProducts = () => {
   return (dispatch) => {
       axios 
-      .get("http://127.0.0.1:8000/api/mugs")
+      .get("http://127.0.0.1:8000/api/mugs",{
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }})
       .then(response => {
-        dispatch(getProductsFromApi(response.data["hydra:member"]))
+        dispatch(getProductsFromApi(response.data))
       })
       .catch(error => {
         throw(error);
