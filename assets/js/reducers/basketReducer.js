@@ -63,8 +63,7 @@ export default (state = initialState, action) => {
         return {
           ...state
         }
-        case FETCH_PRODUCTS:
-          return action.products;
+        
         default:
           return state;
   }

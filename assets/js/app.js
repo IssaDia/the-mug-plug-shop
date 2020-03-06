@@ -9,6 +9,7 @@ import Cart from './components/Cart';
 import Homepage from './pages/Homepage';
 import { Provider } from 'react-redux';
 import store from './store';
+import ProductPage from './pages/ProductPage';
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
               <Switch>  
                   <Route path="/cart" component={Cart}/>
                   <Route path="/contact"/>
+                  <Route path="/products" component={ProductPage}/>
                   <Route path="/" component={Homepage}/>
                   <Route component={Default} /> 
               </Switch>

@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use Faker;
 use Faker\Factory;
+use App\Entity\Mugs;
 use App\Entity\User;
 use App\Entity\Category;
 use App\Entity\Products;
@@ -37,20 +38,19 @@ class AppFixtures extends Fixture
                 ->setPassword($hash);
             $manager->persist($user);
 
-            */
+            
 
            
-                $category = new Category();
+                $category = new Category(); 
                 $category->setTitle('Posters');
-                $manager->persist($category);
+                $manager->persist($category); */
                 for ($j = 1; $j < 15; $j++) {
 
-                    $product = new Products();
-                    $product->setName('Poster' . $j);
+                    $product = new Mugs();
+                    $product->setName('Mug ' . $j);
                     $product->setPrice($faker->randomFloat(2, 15, 30));
                     $product->setNumbers(0);
                     $product->setInCart(false);
-                    $product->setCategory($category);
                     $manager->persist($product);
                 }
         //    }

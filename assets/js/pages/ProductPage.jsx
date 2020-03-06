@@ -1,28 +1,32 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import CardDeck from "react-bootstrap/CardDeck";
+import React from "react";
+import { connect} from 'react-redux';
+import  pic1  from "../../images/pic1.jpg";
+import { addBasket } from "../actions/addAction";
 
-const ProductPage = props => {
 
-    const [product, setProduct] = useState('Issa');
+const ProductPage = ({products}) => {
 
-    useEffect(() => {
-        axios 
-          .get("http://127.0.0.1:8000/api/products/" + props.match.params.id)
-          .then(response => response.data)
-          .then(data => setProduct(data))
-          .catch(error=>console.log(error.response));
-      }, []);
-      
+      console.log(products);
+      const productList = products.map( product => {
+        return <div key={product.id} className='image'>
+                <h3 >{product.name}</h3>
+                <img src={pic1} alt="" height='150' width='150'></img>
+                <h3>{product.price} $</h3>
+                <a onClick={()=>props.addBasket('black')} className='addToCart cart1'>Add to cart</a>
+              </div>
+      })
     return ( 
-        <>
-        <h2>{product.name}</h2>
-        <p>{product.description}</p>
-        </>
+       
+        <div className='container'>
+       {productList}
+       </div>
+        
      );
 }
  
-export default ProductPage;
+const mapStateToProps = state => {
+  return {
+    products: state.products
+  };
+};
+export default connect(mapStateToProps, {addBasket})(ProductPage);
