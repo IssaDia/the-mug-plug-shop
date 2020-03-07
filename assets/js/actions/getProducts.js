@@ -11,7 +11,7 @@ export const getProductsFromApi = (products) => {
 export const getProducts = () => {
   return (dispatch) => {
       axios 
-      .get("http://127.0.0.1:8000/api/mugs",{
+      .get("http://127.0.0.1:8000/api/products",{
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'

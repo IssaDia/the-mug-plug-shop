@@ -25,17 +25,13 @@ export default function productReducer(state = initialState, action) {
             };
         case ADD_BASKET:
             let addQuantity = state.products[action.payload];
-            addQuantity.numbers += 1;
             addQuantity.inCart = true;
-            console.log(addQuantity);
-            console.log(state.cartCost);
-            
+
             return {
                 ...state,
                 upBasket: state.upBasket + 1,
-                cartCost: state.cartCost + state.products[action.payload].price,
-                
-                
+                    cartCost: state.cartCost + state.products[action.payload].price,
+
             };
         case GET_NUMBERS_BASKET:
             return {
@@ -45,39 +41,3 @@ export default function productReducer(state = initialState, action) {
             return state;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

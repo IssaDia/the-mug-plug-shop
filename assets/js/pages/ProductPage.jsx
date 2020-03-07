@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect} from 'react-redux';
 import  pic1  from "../../images/pic1.jpg";
 import { addBasket } from '../actions/addBasket';
@@ -18,7 +18,7 @@ const ProductPage = ({productProps, addBasket}) => {
                 <h3 >{product.name}</h3>
                 <img src={pic1} alt="" height='150' width='150'></img>
                 <h3>{product.price} $</h3>
-                <a  onClick={()=>addBasket(product.id)}className='addToCart cart1'>Add to cart</a>
+                <a  onClick={()=>addBasket(product.id -1)}className='addToCart cart1'>Add to cart</a>
               </div>
       })
     return ( 

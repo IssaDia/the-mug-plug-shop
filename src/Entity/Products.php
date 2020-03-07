@@ -6,10 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\MugsRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ProductsRepository")
  * @ApiResource
  */
-class Mugs
+class Products
 {
     /**
      * @ORM\Id()
