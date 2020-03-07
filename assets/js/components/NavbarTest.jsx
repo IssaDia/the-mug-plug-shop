@@ -3,16 +3,13 @@ import $ from "jquery";
 import { Navbar, Nav } from "react-bootstrap";
 import MugPlugLogo from '../../images/MugPlugLogo.png';
 import { Link } from 'react-router-dom';
-import { getNumbers } from "../actions/getAction";
 import { connect } from "react-redux";
 
 var FontAwesome = require('react-fontawesome');
 
-
-
 const NavbarTest = (props) => {
   useEffect(() => {
-    getNumbers();
+    
     $(window).scroll(function() {
       if ($(document).scrollTop() > 50) {
         $(".nav").addClass("affix");
@@ -36,8 +33,8 @@ const NavbarTest = (props) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-          <Link to="/produits" className="nav-link">Produits</Link>
-            <Link to="/cart" className="nav-link"><FontAwesome name="fas fa-shopping-cart"/><span> ({props.basketProps.basketNumbers}) </span></Link>
+          <Link to="/products" className="nav-link">Produits</Link>
+            <Link to="/cart" className="nav-link"><FontAwesome name="fas fa-shopping-cart"/><span> ({props.basketProps.upBasket}) </span></Link>
             <Link to="/contact" className="nav-link">Contact</Link>
           </Nav>
         </Navbar.Collapse>
@@ -51,7 +48,7 @@ const NavbarTest = (props) => {
 
 const mapStateToProps = state => ({
   
-    basketProps: state.basketState
+    basketProps: state.productState
   })
 
-export default connect(mapStateToProps, { getNumbers })(NavbarTest);
+export default connect(mapStateToProps)(NavbarTest);

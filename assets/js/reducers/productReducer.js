@@ -1,11 +1,13 @@
 import {
-
-    FETCH_PRODUCTS, ADD_BASKET
+    FETCH_PRODUCTS,
+    ADD_BASKET,
+    GET_NUMBERS_BASKET
 } from '../actions/type';
 
 const initialState = {
     upBasket: 0,
-    products : []
+    cartCost: 0,
+    products: []
 }
 
 export default function productReducer(state = initialState, action) {
@@ -13,20 +15,69 @@ export default function productReducer(state = initialState, action) {
         case FETCH_PRODUCTS:
             let myArray = [];
 
-                for(let i = 0 ; i < action.products.length; i++){
+            for (let i = 0; i < action.products.length; i++) {
                 myArray.push(action.products[i]);
-                }
-            console.log(myArray);
-            
-            return { 
+            };
+
+            return {
                 ...state,
-                products:myArray
-            }
-            case ADD_BASKET:
-                console.log('Hello');
+                products: myArray
+            };
+        case ADD_BASKET:
+            let addQuantity = state.products[action.payload];
+            addQuantity.numbers += 1;
+            addQuantity.inCart = true;
+            console.log(addQuantity);
+            console.log(state.cartCost);
+            
+            return {
+                ...state,
+                upBasket: state.upBasket + 1,
+                cartCost: state.cartCost + state.products[action.payload].price,
                 
-            return state;
+                
+            };
+        case GET_NUMBERS_BASKET:
+            return {
+                ...state
+            };
         default:
             return state;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

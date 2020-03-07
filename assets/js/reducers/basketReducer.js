@@ -1,10 +1,4 @@
-
-import {
-  ADD_PRODUCT_BASKET,
-  GET_NUMBERS_BASKET,
-  FETCH_PRODUCTS
-} from '../actions/type';
-
+import {GET_NUMBERS_BASKET} from '../actions/type';
 
 const initialState = {
   basketNumbers: 0,
@@ -38,11 +32,6 @@ export default (state = initialState, action) => {
             [action.payload] : addQuantity
           }
       }  */
-
-      case ADD_PRODUCT_BASKET:
-        return {
-          ...state
-        }
 
 
       case GET_NUMBERS_BASKET:

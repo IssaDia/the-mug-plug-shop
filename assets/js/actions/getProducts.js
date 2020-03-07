@@ -1,4 +1,3 @@
-
 import { FETCH_PRODUCTS } from './type';
 import axios from 'axios'
 

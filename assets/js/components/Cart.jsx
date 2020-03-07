@@ -2,18 +2,17 @@ import React, { Fragment } from 'react'
 import { connect } from 'react-redux';
 
 
-const Cart = ({basketProps}) => {
+const Cart = ({productProps}) => {
 
-  console.log(basketProps.products);
+  console.log(productProps);
 
   let productsInCart = [];
 
-  Object.keys(basketProps.products).forEach( function(item) {
-    if(basketProps.products[item].inCart) {
-      productsInCart.push(basketProps.products[item])
+  Object.keys(productProps.products).forEach( function(item) {
+    if(productProps.products[item].inCart) {
+      productsInCart.push(productProps.products[item])
     }
 
-    console.log(productsInCart);
   
   })
 
@@ -38,7 +37,7 @@ const Cart = ({basketProps}) => {
 
 const mapStateToProps = state => ({
   
-  basketProps: state.basketState
+  productProps: state.productState
 })
 
 export default connect(mapStateToProps)(Cart);
