@@ -8,7 +8,8 @@ h1 span {
     color: rgba(255, 81, 0, 0.925);
 }
 
-.container {
+.container,
+.container-products {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -432,7 +433,7 @@ html {
 }
 
 body {
-    background: #000000;
+    
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -445,7 +446,7 @@ a {
 
 a:hover {
     color: darken(#1ab188, 5%);
-}   
+}
 
 .form {
     background: rgba(#13232f, .9);
@@ -512,7 +513,7 @@ label {
     pointer-events: none;
     font-size: 22px;
 
-    
+
 }
 
 label .req {
@@ -525,7 +526,7 @@ label.active {
     left: 2px;
     font-size: 14px;
 
-   
+
 }
 
 label.active .req {
@@ -550,7 +551,7 @@ textarea {
     border-radius: 0;
     transition: border-color .25s ease, box-shadow .25s ease;
 
-    
+
 }
 
 input,
@@ -577,12 +578,12 @@ textarea {
     clear: both;
 }
 
-.top-row  >div {
+.top-row>div {
     float: left;
     width: 48%;
     margin-right: 4%;
 
-    
+
 }
 
 .top-row :last-child {
@@ -603,7 +604,7 @@ textarea {
     transition: all.5s ease;
     -webkit-appearance: none;
 
-    
+
 }
 
 
@@ -697,3 +698,123 @@ footer .social a:hover {
     font-size: 1.2em;
     width: 20%;
 }
+
+
+/* Cart */
+
+.container-products {
+    max-width: 650px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.container-products ion-icon {
+    font-size: 25px;
+    color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.product-header {
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 4px solid lightgray;
+    margin: 0 auto;
+
+
+}
+
+.product-title {
+    width: 45%
+}
+
+.price {
+    width: 15%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+}
+
+.quantity {
+    width: 30%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+}
+
+.total {
+    width: 10%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+}
+
+.product{
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray; 
+}
+
+.product ion-icon {
+    cursor: pointer;
+}
+
+.products {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products img {
+    width: 75px;
+  
+}
+
+.basketTotalContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.basketTotalTitle {
+    width: 30%;
+}
+
+
+.basketTotal {
+    width: 10%
+}
+
+@media(max-width: 500px) {
+    nav h2{
+        width: 100px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .sm-hide {
+        display: none;
+    }
+    
+    .products,
+    .product-header {
+        justify-content: center;
+    }
+    
+    .basketTotalContainer {
+        padding-right: 8%;
+    }
+    
+}
+
+
+
+

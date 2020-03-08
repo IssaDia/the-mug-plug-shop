@@ -8,15 +8,13 @@ const ProductPage = ({productProps, addBasket}) => {
 
 
       let products = productProps.products;
-      console.log(products);
-      
       
       const productList = products.map( product => {
         
         
         return <div key={product.id} className='image'>
                 <h3 >{product.name}</h3>
-                <img src={pic1} alt="" height='150' width='150'></img>
+              <img src={pic1} alt="" height='150' width='150'></img>
                 <h3>{product.price} $</h3>
                 <a  onClick={()=>addBasket(product.id -1)}className='addToCart cart1'>Add to cart</a>
               </div>

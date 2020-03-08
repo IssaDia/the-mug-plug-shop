@@ -26,6 +26,7 @@ export default function productReducer(state = initialState, action) {
         case ADD_BASKET:
             let addQuantity = state.products[action.payload];
             addQuantity.inCart = true;
+            addQuantity.numbers += 1;
 
             return {
                 ...state,
