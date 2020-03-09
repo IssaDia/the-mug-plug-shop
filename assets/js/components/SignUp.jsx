@@ -2,20 +2,22 @@ import React from "react";
 import { reduxForm, Field } from 'redux-form'; 
 
 
+const handleSubmit =   values  =>{
+  console.log(values);
+
+}
 
 
+const SignUp = ({ handleSubmit }) => {
 
-const SignUp = () => {
 
-
-  
   
   return (
       <>
     <div id="signup">
     <h1>Sign Up for Free</h1>
   </div>
-  <form >
+  <form onSubmit={()=>handleSubmit()}>
    
     <div className="top-row">
       <div className="field-wrap">
@@ -54,5 +56,6 @@ const SignUp = () => {
 };
 
 export default reduxForm({
-  form : 'signUp form' 
+  form : 'signUp form',
+  handleSubmit
 })(SignUp);
