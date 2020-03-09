@@ -1,25 +1,35 @@
 import React from "react";
+import { reduxForm, Field } from 'redux-form'; 
+
+
+
+
 
 const SignUp = () => {
+
+
+  
+  
   return (
       <>
     <div id="signup">
     <h1>Sign Up for Free</h1>
   </div>
-  <form action="/" method="post">
+  <form >
+   
     <div className="top-row">
       <div className="field-wrap">
         <label>
           First Name<span className="req">*</span>
         </label>
-        <input type="text" required autoComplete="off" />
+        <Field name='firstName' type="text" component="input" required autoComplete="off"></Field>
       </div>
 
       <div className="field-wrap">
         <label>
           Last Name<span className="req">*</span>
         </label>
-        <input type="text" required autoComplete="off" />
+        <Field name='lastName' type="text" component="input" required></Field>
       </div>
     </div>
 
@@ -27,18 +37,22 @@ const SignUp = () => {
       <label>
         Email Address<span className="req">*</span>
       </label>
-      <input type="email" required autoComplete="off" />
+      <Field name='email' type="email" component="input" required autoComplete="off"></Field>
     </div>
 
     <div className="field-wrap">
       <label>
         Set A Password<span className="req">*</span>
       </label>
-      <input type="password" required autoComplete="off" />
+      <Field name='lastName' type="password" component="input" required autoComplete="off"></Field>
     </div>
+
+    <button type="submit">Submit</button>
   </form>
   </>
   );
 };
 
-export default SignUp;
+export default reduxForm({
+  form : 'signUp form' 
+})(SignUp);

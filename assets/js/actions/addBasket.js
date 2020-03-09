@@ -3,7 +3,7 @@ import {
 } from './type';
 
 export const addBasket = (id) => {
-  return (dispatch) => {
+  return (dispatch) => { 
     dispatch({
       type: ADD_BASKET,
       payload: id

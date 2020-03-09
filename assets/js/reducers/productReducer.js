@@ -1,7 +1,9 @@
 import {
     FETCH_PRODUCTS,
     ADD_BASKET,
-    GET_NUMBERS_BASKET
+    GET_NUMBERS_BASKET,
+    INCREASE_QUANTITY_CART,
+    DECREASE_QUANTITY_CART
 } from '../actions/type';
 
 const initialState = {
@@ -38,6 +40,23 @@ export default function productReducer(state = initialState, action) {
             return {
                 ...state
             };
+        case INCREASE_QUANTITY_CART:
+           
+            console.log('up');
+
+            return {
+                ...state
+            };
+        case DECREASE_QUANTITY_CART:
+            let decreaseProductNumber = state.products[action.payload];
+            decreaseProductNumber.numbers -= 1;
+            console.log('down');
+
+            return {
+                ...state
+            };
+
+
         default:
             return state;
     }

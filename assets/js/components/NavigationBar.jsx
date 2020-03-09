@@ -3,7 +3,6 @@ import $ from "jquery";
 import { Navbar, Nav } from "react-bootstrap";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import ButtonToolbar from "react-bootstrap/Button";
-import Button from "react-bootstrap/Button";
 import Popover from "react-bootstrap/Popover";
 import MugPlugLogo from "../../images/MugPlugLogo.png";
 import { Link } from "react-router-dom";
