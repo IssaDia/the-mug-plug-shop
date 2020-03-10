@@ -16,4 +16,3 @@ store.dispatch(getProducts());
 
 export default store;
 
-

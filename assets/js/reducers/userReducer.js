@@ -2,15 +2,18 @@ import {
     USER_SIGNUP, USER_LOGIN
 } from '../actions/type';
 
-const initialState = {
-   
-}
 
-export default function formReducer(state = initialState, action) {
+
+export default function userReducer(state = [], action) {
     switch (action.type) {
+
         case USER_SIGNUP:
 
-            return state;
+        console.log(state);
+        
+        console.log('success');
+        
+            return [...state, action.payload];
         case USER_LOGIN:
 
             return state;

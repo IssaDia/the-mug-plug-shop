@@ -1,29 +1,38 @@
 import { USER_SIGNUP } from './type';
 import axios from 'axios'
 
-export const postUserSuccess = (products) => {
-    return {
-      type: USER_SIGNUP,
-      data
-    }
-  };
 
-export const postUser = () => {
+export const postUserSuccess =  (data) => {
+  return {
+    type: USER_SIGNUP,
+    payload: {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      password: data.password
+    }
+  }
+};
+
+
+
+export const postUser = (data) => {
   return (dispatch) => {
-      axios 
-      .post("http://127.0.0.1:8000/api/products",{
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }})
+     axios.post("http://127.0.0.1:8000/api/users",data, {
+      headers: {
+          'Content-Type': 'application/json',
+      }})
       .then(response => {
         dispatch(postUserSuccess(response.data))
       })
       .catch(error => {
-        throw(error);
+        throw(console.log(error));
       });
+
+      
+
+  };
     
-    }
-    
-}
+
+};
 

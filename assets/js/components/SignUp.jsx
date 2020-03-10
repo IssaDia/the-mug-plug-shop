@@ -1,23 +1,18 @@
 import React from "react";
 import { reduxForm, Field } from 'redux-form'; 
+import { postUser } from "../actions/userAction";
+import { connect } from "react-redux";
 
 
-const handleSubmit =   values  =>{
-  console.log(values);
 
-}
+let SignUp = ({postUser,fields : {firstName,lastName, email, password},handleSubmit}) => {
 
-
-const SignUp = ({ handleSubmit }) => {
-
-
-  
   return (
       <>
     <div id="signup">
     <h1>Sign Up for Free</h1>
   </div>
-  <form onSubmit={()=>handleSubmit()}>
+  <form onSubmit={handleSubmit(postUser)}>
    
     <div className="top-row">
       <div className="field-wrap">
@@ -34,28 +29,41 @@ const SignUp = ({ handleSubmit }) => {
         <Field name='lastName' type="text" component="input" required></Field>
       </div>
     </div>
-
-    <div className="field-wrap">
+<div className="field-wrap">
       <label>
         Email Address<span className="req">*</span>
       </label>
       <Field name='email' type="email" component="input" required autoComplete="off"></Field>
     </div>
 
-    <div className="field-wrap">
+   <div className="field-wrap">
       <label>
         Set A Password<span className="req">*</span>
       </label>
-      <Field name='lastName' type="password" component="input" required autoComplete="off"></Field>
+      <Field name='password' type="password" component="input" required autoComplete="off"></Field>
     </div>
-
+  
     <button type="submit">Submit</button>
   </form>
   </>
   );
 };
 
+
+const mapDispatchToProps = dispatch => {
+  return {
+    postUser : values => {
+      dispatch(postUser(values));
+    }
+  };
+};
+
+SignUp = connect(null,
+ mapDispatchToProps
+)(SignUp)
+
 export default reduxForm({
   form : 'signUp form',
-  handleSubmit
-})(SignUp);
+  fields:['firstName','lastName', 'email','password'],
+  postUser: ()=> {}
+})(SignUp)

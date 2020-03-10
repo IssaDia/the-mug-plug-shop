@@ -29,7 +29,7 @@ const Cart = ({ productProps }) => {
           <td>
             <FontAwesome
               name="fas fa-minus"
-              onClick={() => decreaseCart(product.id)}
+              onClick={decreaseCart(product.id)}
             />
             <input placeholder={product.numbers}></input>
             <FontAwesome
@@ -77,12 +77,11 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-    ...bindActionCreators({
+  return bindActionCreators({
       increaseCart,
-      decreaseCart, dispatch
-    })
-  };
+      decreaseCart}, dispatch
+    );
+
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default connect(mapStateToProps,mapDispatchToProps)(Cart);
