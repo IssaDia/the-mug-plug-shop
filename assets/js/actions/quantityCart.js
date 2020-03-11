@@ -10,13 +10,15 @@ import {
       payload: {
         id
       }
+      
+      
     }
   }
 
 
   export const increaseCart = id => {
     return (dispatch) => {
-        console.log("increase cart");
+        console.log(id);
         dispatch(increaseCartSuccess(id));
       }
   };

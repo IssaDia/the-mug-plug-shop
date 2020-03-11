@@ -8,6 +8,10 @@ h1 span {
     color: rgba(255, 81, 0, 0.925);
 }
 
+h3 {
+    font-size: 16px;
+}
+
 .container,
 .container-products {
     display: flex;
@@ -21,6 +25,7 @@ h1 span {
 
     margin-right: 20px;
     margin-left: 20px;
+    margin-bottom: 40px;
     position: relative;
     overflow: hidden;
 }
@@ -35,12 +40,9 @@ h1 span {
     text-align: center;
 }
 
-.image:hover .cart1,
-.image:hover .cart2,
-.image:hover .cart3,
-.image:hover .cart4 {
+.image:hover .cart {
 
-    bottom: 50px;
+   
     opacity: 1;
     padding: 10px;
     text-decoration: none;
@@ -111,6 +113,10 @@ h1 span {
 
 .nav div.main_list ul li a:hover {
     color: #00E676;
+}
+
+.navbar-nav {
+    display: inline;
 }
 
 
@@ -511,7 +517,7 @@ label {
     color: rgba(#ffffff, .5);
     transition: all 0.25s ease;
     pointer-events: none;
-    font-size: 22px;
+    font-size: 14px;
 
 
 }
@@ -617,6 +623,14 @@ textarea {
 .forgot {
     margin-top: -20px;
     text-align: right;
+}
+
+.form-btn {
+    background: #1ab188;
+    color: #ffffff;
+    border-radius: 0px;
+
+
 }
 
 

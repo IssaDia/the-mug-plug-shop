@@ -29,7 +29,7 @@ const Cart = ({ productProps }) => {
           <td>
             <FontAwesome
               name="fas fa-minus"
-              onClick={decreaseCart(product.id)}
+              onClick={()=>decreaseCart(product.id)}
             />
             <input placeholder={product.numbers}></input>
             <FontAwesome

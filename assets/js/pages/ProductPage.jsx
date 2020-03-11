@@ -12,11 +12,12 @@ const ProductPage = ({productProps, addBasket}) => {
       const productList = products.map( product => {
         
         
-        return <div key={product.id} className='image'>
-                <h3 >{product.name}</h3>
-              <img src={pic1} alt="" height='150' width='150'></img>
+        return <div key={product.id} className='image card'>
+              
+              <img src={require(`../../images/${product.images}.jpeg`)} alt="" height='300' width='300'></img>
+              <h3 >{product.name}</h3>
                 <h3>{product.price} $</h3>
-                <a  onClick={()=>addBasket(product.id -1)}className='addToCart cart1'>Add to cart</a>
+                <a  onClick={()=>addBasket(product.id -1)}className='addToCart cart'>Add to cart</a>
               </div>
       })
     return ( 

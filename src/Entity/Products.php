@@ -38,6 +38,11 @@ class Products
      */
     private $inCart;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $images;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -87,6 +92,18 @@ class Products
     public function setInCart(bool $inCart): self
     {
         $this->inCart = $inCart;
+
+        return $this;
+    }
+
+    public function getImages(): ?string
+    {
+        return $this->images;
+    }
+
+    public function setImages(string $images): self
+    {
+        $this->images = $images;
 
         return $this;
     }

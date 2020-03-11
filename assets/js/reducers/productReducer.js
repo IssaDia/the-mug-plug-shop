@@ -41,8 +41,10 @@ export default function productReducer(state = initialState, action) {
                 ...state
             };
         case INCREASE_QUANTITY_CART:
+            let increaseProductNumber = state.products[action.payload];
+            increaseProductNumber.numbers += 1;
            
-            console.log('up');
+            console.log(state.products);
 
             return [...state, action.payload];
         case DECREASE_QUANTITY_CART:
