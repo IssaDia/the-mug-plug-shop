@@ -1,10 +1,11 @@
-import React, { Component} from "react";
-import { connect } from "react-redux";
-import  pic1  from "../../images/pic1.jpg";
+import React from "react";
+import  Jumbotron  from "../components/Jumbotron";
 
-const Homepage = (props) => {
+const Homepage = (title, buttonText, className) => {
   return ( 
     <>
+    <Jumbotron title='Bienvenue chez Mug Plug' buttonText='Découvrez nos Mugs!' className='jumbo-products-homepage'></Jumbotron>
+    <Jumbotron title='Rejoignez notre Chat!' buttonText='Participer!' className='jumbo-chat-homepage'></Jumbotron>
     </>
   
  

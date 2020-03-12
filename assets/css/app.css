@@ -838,4 +838,34 @@ footer .social a:hover {
 
 
 
+/* Jumbotron */
+
+.jumbo-products-homepage {
+    background-image: url('../images/mugWallpaper3.jpg');
+    width: 100%;
+    border: 4px solid black;
+    margin-top: 80px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.jumbo-chat-homepage {
+    background-image: url('../images/chat-wallpaper.jpg');
+    width: 100%;
+    border: 4px solid black;
+    margin-top: 80px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+/* Pagination */
+
+.pagination {
+    justify-content: center;
+ }
+
+
+
 
