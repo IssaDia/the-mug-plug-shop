@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import ProductPage from './pages/ProductPage';
 import Connexion from './pages/Connexion';
+import ChatPage from './pages/ChatPage';
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
                   <Route path="/contact"/>
                   <Route path="/products" component={ProductPage}/>
                   <Route path="/connexion" component={Connexion}/>
+                  <Route path="/chat" component={ChatPage}/>
                   <Route path="/" component={Homepage}/>
                   <Route component={Default} /> 
               </Switch>

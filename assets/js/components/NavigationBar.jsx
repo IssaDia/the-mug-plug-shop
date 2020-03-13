@@ -73,9 +73,9 @@ const NavigationBar = props => {
               <FontAwesome name="fas fa-shopping-cart" />
               <span> ({props.basketProps.upBasket}) </span>
             </Link>
-            <Link to="/contact" className="nav-link">
+            <a href='http://127.0.0.1:8000/contact' className="nav-link">
               Contact
-            </Link>
+            </a>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

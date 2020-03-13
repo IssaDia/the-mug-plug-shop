@@ -1,0 +1,24 @@
+{% include 'base.html.twig' %}
+
+
+<h1>
+	Message de la part de
+	{{contact.name}}</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Nom</th>
+			<th scope="col">Email</th>
+			<th scope="col">Subject</th>
+			<th scope="col">Message</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{{contact.name}}</td>
+			<td>{{contact.email}}</td>
+			<td>{{contact.subject}}</td>
+			<td>{{contact.message}}</td>
+		</tr>
+	</tbody>
+</table>
