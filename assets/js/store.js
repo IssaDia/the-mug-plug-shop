@@ -12,7 +12,6 @@ const store = createStore(rootReducer,
      composeWithDevTools(applyMiddleware(...middleware))
 );
 
-store.dispatch(getProducts());
 
 export default store;
 

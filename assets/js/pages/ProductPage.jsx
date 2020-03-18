@@ -1,9 +1,22 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
+import React, { useState,useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { addBasket } from "../actions/addBasket";
+import { getProduct } from "../actions/getProduct";
+import { Link } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import { getProducts } from "../actions/getProducts";
 
-const ProductPage = ({ productProps, addBasket }) => {
-  let products = productProps.products;
+
+const ProductPage = () => {
+
+  useEffect(() => {
+  dispatch(getProducts())
+  }, [])
+
+  const products = useSelector(state=>state.productState.products);
+  const dispatch = useDispatch();
+  
+  
 
   const [currentPage, setcurrentPage] = useState(1);
 
@@ -35,7 +48,6 @@ const ProductPage = ({ productProps, addBasket }) => {
     );
   });
 
-  console.log(pages);
 
   const productList = paginatedProducts.map(product => {
     return (
@@ -46,9 +58,12 @@ const ProductPage = ({ productProps, addBasket }) => {
           height="300"
           width="300"
         ></img>
-        <h3>{product.name}</h3>
-        <h3>{product.price} $</h3>
-        <a onClick={() => addBasket(product.id - 1)} className="addToCart cart">
+        <div className='product-text'>
+          <p><strong>{product.name}</strong></p>
+          <p>{product.price} $</p>
+          <Link to={`/products/${product.id}`}className='btn btn-success' onClick={() => dispatch(getProduct(product.id))}>Détail</Link>
+        </div>
+        <a onClick={() => dispatch(addBasket(product.id-1))} className="addToCart cart">
           Add to cart
         </a>
       </div>
@@ -56,7 +71,8 @@ const ProductPage = ({ productProps, addBasket }) => {
   });
   return (
     <>
-      <div className="container">{productList}</div>
+    <h2>Nos Mugs</h2>
+      <Container className="products-container">{productList}</Container>
       <div className="pagination-block">
         <ul className="pagination">{pagination}</ul>
       </div>
@@ -64,18 +80,5 @@ const ProductPage = ({ productProps, addBasket }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addBasket: id => {
-      dispatch(addBasket(id));
-    }
-  };
-};
 
-const mapStateToProps = state => {
-  return {
-    productProps: state.productState
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductPage);
+export default ProductPage;

@@ -1,5 +1,6 @@
 import {
     FETCH_PRODUCTS,
+    FETCH_SINGLE_PRODUCT,
     ADD_BASKET,
     GET_NUMBERS_BASKET,
     INCREASE_QUANTITY_CART,
@@ -16,19 +17,23 @@ export default function productReducer(state = initialState, action) {
     switch (action.type) {
         case FETCH_PRODUCTS:
             let myArray = [];
-
             for (let i = 0; i < action.products.length; i++) {
                 myArray.push(action.products[i]);
             };
-
             return {
                 ...state,
                 products: myArray
             };
+
+        case FETCH_SINGLE_PRODUCT:
+            return  state;
+
         case ADD_BASKET:
             let addQuantity = state.products[action.payload];
             addQuantity.inCart = true;
             addQuantity.numbers += 1;
+            console.log('yeah');
+            
 
             return {
                 ...state,
@@ -43,7 +48,7 @@ export default function productReducer(state = initialState, action) {
         case INCREASE_QUANTITY_CART:
             let increaseProductNumber = state.products[action.payload];
             increaseProductNumber.numbers += 1;
-           
+
             console.log(state.products);
 
             return [...state, action.payload];

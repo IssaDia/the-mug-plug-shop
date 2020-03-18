@@ -1,5 +1,5 @@
 import { FETCH_PRODUCTS } from './type';
-import axios from 'axios'
+import axios from 'axios';
 
 export const getProductsFromApi = (products) => {
     return {

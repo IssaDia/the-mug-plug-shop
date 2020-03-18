@@ -1,18 +1,20 @@
 import React from "react";
-import {Jumbotron as Jumbo} from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import { Jumbotron as Jumbo } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const Jumbotron = (props) => {
+
+const Jumbotron = props => {
   return (
-    <Jumbo className= {props.className}>
+    <Jumbo className={props.className}>
       <h1>{props.title}</h1>
       <p>
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
-      </p>
-      <p>
-        <Button variant="primary">{ props.buttonText}</Button>
-      </p>
+        {props.text}
+      </p>  
+        <button className='btn btn-dark'>
+        <Link to={{pathname: `/${props.link}`}}>{props.buttonText}</Link>
+        </button>
+      
     </Jumbo>
   );
 };
