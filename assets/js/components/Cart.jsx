@@ -1,28 +1,34 @@
-import React, { Fragment } from "react";
-import { connect, useSelector } from "react-redux";
-import pic1 from "../../images/pic1.jpg";
+import React, { Fragment, useEffect } from "react";
+import {  useSelector, useDispatch } from "react-redux";
 import { Container } from "react-bootstrap";
 import { increaseCart } from "../actions/quantityCart";
 import { decreaseCart } from "../actions/quantityCart";
-import { bindActionCreators } from "redux";
+import $ from 'jquery';
+
 var FontAwesome = require("react-fontawesome");
 
 const Cart = () => {
+
+
+  useEffect(() => { 
+    let classy = document.getElementById('classy');
+    console.log(classy);
+    
+    
+  }, []);
   let productsInCart = [];
 
-  const products = useSelector(state=>state.productState.products);
+  const cart = useSelector(state=>state.productState);
+  const dispatch = useDispatch();
 
-
-
-
-
-  Object.keys(products).forEach(function(item) {
-    if (products[item].inCart) {
-      productsInCart.push(products[item]);
+  Object.keys(cart.products).forEach(function(item) {
+    if (cart.products[item].inCart) {
+      productsInCart.push(cart.products[item]);  
+      
     }
   });
 
-  console.log(productsInCart);
+
 
   productsInCart = productsInCart.map((product, index) => {
     return (
@@ -35,15 +41,15 @@ const Cart = () => {
           <td>${parseFloat(product.price).toFixed(2)}</td>
           <td>
             <div className='cart-quantity'>
-              <span><FontAwesome
+              <span id= 'classy'><FontAwesome
                 name="fas fa-minus"
-                onClick={() => decreaseCart(product.id)}
+                onClick={() => dispatch(decreaseCart(product.id -1))}
               /></span>
              <span><input placeholder={product.numbers}></input></span> 
               <span>
               <FontAwesome
                 name="fas fa-plus"
-                onClick={() => increaseCart(product.id)}
+                onClick={() => dispatch(increaseCart(product.id -1))}
               />
                 </span>
             </div>
@@ -71,7 +77,7 @@ const Cart = () => {
             <td></td>
             <td></td>
             <td>Total Cart</td>
-            <td>${parseFloat(products.cartCost).toFixed(2)}</td>
+            <td>${parseFloat(cart.cartCost).toFixed(2)}</td>
           </tr>
         </tbody>
       </table>
@@ -80,20 +86,4 @@ const Cart = () => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    productProps: state.productState
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators(
-    {
-      increaseCart,
-      decreaseCart
-    },
-    dispatch
-  );
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default Cart;

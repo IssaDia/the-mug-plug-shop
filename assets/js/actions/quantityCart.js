@@ -1,44 +1,27 @@
 import {
-    INCREASE_QUANTITY_CART,
-    DECREASE_QUANTITY_CART
-  } from './type';
+  INCREASE_QUANTITY_CART,
+  DECREASE_QUANTITY_CART
+} from './type';
 
 
-  export const increaseCartSuccess = id => {
-    return {
+
+export const increaseCart = id => {
+  return (dispatch) => { 
+    dispatch({
       type: INCREASE_QUANTITY_CART,
-      payload: {
-        id
-      }
-      
-      
-    }
+      payload: id
+    });
+
   }
+};
 
 
-  export const increaseCart = id => {
-    return (dispatch) => {
-        console.log(id);
-        dispatch(increaseCartSuccess(id));
-      }
-  };
-
-
-  export const decreaseCartSuccess = id => {
-    return {
+export const decreaseCart = id => {
+  return (dispatch) => { 
+    dispatch({
       type: DECREASE_QUANTITY_CART,
-      payload: {
-        id
-      }
-    }
-  }
+      payload: id
+    });
 
-
-  export const decreaseCart = id => {
-    return (dispatch) => {
-        console.log("decrease cart");
-        dispatch(decreaseCartSuccess(id));
-      }
   }
-  
-  
+}

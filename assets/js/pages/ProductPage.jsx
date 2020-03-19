@@ -9,10 +9,6 @@ import { getProducts } from "../actions/getProducts";
 
 const ProductPage = () => {
 
-  useEffect(() => {
-  dispatch(getProducts())
-  }, [])
-
   const products = useSelector(state=>state.productState.products);
   const dispatch = useDispatch();
   
