@@ -3,8 +3,6 @@ import {
   DECREASE_QUANTITY_CART
 } from './type';
 
-
-
 export const increaseCart = id => {
   return (dispatch) => { 
     dispatch({
@@ -14,7 +12,6 @@ export const increaseCart = id => {
 
   }
 };
-
 
 export const decreaseCart = id => {
   return (dispatch) => { 

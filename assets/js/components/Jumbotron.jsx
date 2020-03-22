@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Jumbotron = props => {
   return (
     <Jumbo className={props.className}>
-      <h1>{props.title}</h1>
+      <h6>{props.title}</h6>
       <p>
         {props.text}
       </p>  

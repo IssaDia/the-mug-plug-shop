@@ -30,11 +30,11 @@ export default function productReducer(state = initialState, action) {
 
         case ADD_BASKET:
             let addQuantity = state.products[action.payload];
-            console.log(addQuantity);
             
+
             addQuantity.inCart = true;
             addQuantity.numbers += 1;
-            
+
             return {
                 ...state,
                 upBasket: state.upBasket + 1,
@@ -46,12 +46,10 @@ export default function productReducer(state = initialState, action) {
                 ...state
             };
         case INCREASE_QUANTITY_CART:
-            
-            let increase = state.products[action.payload];
-            increase.numbers +=1;
-            console.log(increase);
-            
 
+            let increase = state.products[action.payload];
+            increase.numbers += 1;
+           
             return {
                 ...state,
                 cartCost: state.cartCost + state.products[action.payload].price

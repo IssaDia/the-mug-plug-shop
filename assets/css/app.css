@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: white;
+    background: #ffffff;
     font-family: 'Acme', sans-serif;
 
 }
@@ -18,11 +18,15 @@ h1 span {
 
 h2 {
     font-size: 40px;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 h3 {
     font-size: 16px;
+}
+
+h6{
+    color: #ffffff;
 }
 
 .container,
@@ -69,21 +73,40 @@ h3 {
 
 /* Navbar */
 
+.sf-toolbar-clearer{
+    display: none !important;
+}
+
 nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 8vh;
-
+    min-height: 12vh;
     font-family: 'Poppins', sans-serif;
 
 }
 
+.background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .background-text h4{
+   font-size: 20px;
+  }
+
+  .background-text h5{
+    font-size: 70px;
+    font-family: 'Liu Jian Mao Cao', cursive;
+
+   }
+ 
+
 .logo {
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 20px;
+   float: left;
 }
 
 .nav-links {
@@ -103,7 +126,7 @@ nav {
 
 
 .nav-links a {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: bold;
@@ -140,8 +163,8 @@ nav {
 
         position: absolute;
         right: 0;
-        height: 92vh;
-        top: 8vh;
+        height: 62vh;
+        top: 16vh;
         background-color: #000000;
         display: flex;
         flex-direction: column;
@@ -154,7 +177,9 @@ nav {
     .nav-links li {
         opacity: 0;
     }
-
+    .nav-links li a {
+        color: #ffffff;
+    }
     .burger {
         display: block;
         cursor: pointer;
@@ -192,8 +217,8 @@ nav {
 }
 
 .bg-img {
-    min-height: 600px;
-    background-image: url("../images/MugPlugWallpaper.png");
+    min-height: 400px;
+    background-image: url("../images/MugPlug.png");
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
@@ -544,7 +569,7 @@ footer .social a:hover {
     font-size: 12px;
     padding-top: 10px;
     margin-bottom: O !important;
-    padding-left: 5px;
+    
 }
 
 .price {
@@ -666,7 +691,19 @@ footer .social a:hover {
 /* Jumbotron */
 
 .jumbo-products-homepage {
-    background-image: url('../images/mugWallpaper3.jpg');
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.jumbo-chat-homepage {
+    background-image: url('../images/chat-wallpaper.jpg');
+    text-align: center;
+
     width: 100%;
     border: 4px solid black;
     margin-top: 80px;
@@ -675,14 +712,8 @@ footer .social a:hover {
 
 }
 
-.jumbo-chat-homepage {
-    background-image: url('../images/chat-wallpaper.jpg');
-    width: 100%;
-    border: 4px solid black;
-    margin-top: 80px;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+.jumbotron a {
+    color: #ffffff;
 }
 
 /* Pagination */
@@ -699,3 +730,163 @@ footer .social a:hover {
     }
 
 }
+
+.btn-detail {
+    margin-bottom: 10px;
+    float: right;
+}
+
+.card {
+    border-radius: 25px;
+    box-shadow: -11px 11px 1px rgba(0, 0, 0, 0.3);
+}
+
+.product-price {
+    position: absolute;
+    background: #11e95b;
+    padding: 7px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 200;
+    color: #fff;
+    border-radius: 7px;
+    margin-top: -13px;
+    margin-left: -5px;
+    box-shadow: -10px 20px 15px -10px rgba(17, 233, 91, 0.3);
+}
+
+
+
+/* Single Product */
+
+.single-product-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+/* Payment Component */
+
+
+  .rounded-lg {
+    border-radius: 1rem;
+    margin-top: 40px;
+  }
+  
+  .nav-pills .nav-link {
+    color: #555;
+  }
+  
+  .nav-pills .nav-link.active {
+    color: #fff;
+  }
+
+
+
+/* Contact Form CSS */
+
+
+.get-in-touch {
+    max-width: 800px;
+    margin: 50px auto;
+    position: relative;
+  
+  }
+  .get-in-touch .title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 3.2em;
+    line-height: 48px;
+    padding-bottom: 48px;
+       color: #5543ca;
+      background: #5543ca;
+      background: -moz-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
+      background: -webkit-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
+      background: linear-gradient(to right,#f4524d  0%,#5543ca  100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+  }
+  
+  .contact-form .form-field {
+    position: relative;
+    margin: 32px 0;
+  }
+  .contact-form .input-text {
+    display: block;
+    width: 100%;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: #5543ca;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+  }
+  .contact-form .input-text:focus {
+    outline: none;
+    border: #ffffff;
+  }
+  .contact-form .input-text:focus + .label,
+  .contact-form .input-text.not-empty + .label {
+    -webkit-transform: translateY(-24px);
+            transform: translateY(-24px);
+  }
+  .contact-form .label {
+    position: absolute;
+    left: 20px;
+    bottom: 11px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #5543ca;
+    cursor: text;
+    transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out, 
+    -webkit-transform .2s ease-in-out;
+  }
+  .contact-form .submit-btn {
+    display: inline-block;
+    background-color: #000;
+     background-image: linear-gradient(125deg,#a72879,#064497);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    width:200px;
+    cursor: pointer;
+  }
+
+  .contact-form .form-control {
+      background-color: #ffffff !important;
+  }
+
+  /* Featured Component */
+
+  .featured-price, .featured-promo {
+      color: red;
+      font-size: 24px;
+      
+  }
+
+  .featured-container {
+    
+    text-align: center;
+}
+
+.featured-products-container{
+    padding-bottom: 20px;
+}
+  
+  
+
+
+
+
+
+
+
+

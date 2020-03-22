@@ -1,18 +1,45 @@
 {% include 'base.html.twig' %}
-{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
-    <h1>Contact Us</h1>
 
-    <div class="row">
-        <div class="col">
-            {{ form(form) }}
-        </div>
-      
-    </div>
-   
+	{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
-    
+
+	<section class="get-in-touch">
+		<h1 class="title">Contact Us</h1>
+
+		{{ form_start(form, {'attr': {'class': 'contact-form row'}}) }}
+
+		<div class="form-field col-lg-6">
+			{{ form_widget(form.name, { 'id': 'name',  'attr': { 'class' : 'input-text js-input' }}
+			)}}
+			{{ form_label(form.name, 'Name', { 'label_attr': {'class': 'label'} }) }}
+
+		</div>
+		<div class="form-field col-lg-6 ">
+			{{ form_widget(form.email, { 'id': 'email',  'attr': { 'class' : 'input-text js-input' }}
+			)}}
+			{{ form_label(form.email, 'Email', { 'label_attr': {'class': 'label'} }) }}
+
+		</div>
+		<div class="form-field col-lg-6 ">
+
+			{{ form_widget(form.subject, { 'id': 'subject',  'attr': { 'class' : 'input-text js-input' }}
+			)}}
+			{{ form_label(form.subject, 'Subject', { 'label_attr': {'class': 'label'} }) }}
+
+		</div>
+		<div class="form-field col-lg-12">
+			{{ form_widget(form.message, { 'id': 'message',  'attr': { 'class' : 'input-text js-input' }}
+			)}}
+			{{ form_label(form.message, 'Message', { 'label_attr': {'class': 'label'} }) }}
+
+		</div>
+
+
+		{{ form_end(form) }}
+
+	</section>
+
+
 {% endblock %}
-
-

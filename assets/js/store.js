@@ -4,7 +4,6 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import { getProducts } from './actions/getProducts';
 
-
 const middleware = [thunk];
 
 const store = createStore(rootReducer,
@@ -13,7 +12,6 @@ const store = createStore(rootReducer,
 );
 
 store.dispatch(getProducts());
-
 
 export default store;
 

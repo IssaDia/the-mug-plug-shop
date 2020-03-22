@@ -1,57 +1,61 @@
-import React, { Fragment, useEffect } from "react";
-import {  useSelector, useDispatch } from "react-redux";
+import React, { Fragment } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Container } from "react-bootstrap";
 import { increaseCart } from "../actions/quantityCart";
 import { decreaseCart } from "../actions/quantityCart";
-import $ from 'jquery';
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 var FontAwesome = require("react-fontawesome");
 
 const Cart = () => {
 
-
-  useEffect(() => { 
-    let classy = document.getElementById('classy');
-    console.log(classy);
-    
-    
-  }, []);
   let productsInCart = [];
 
-  const cart = useSelector(state=>state.productState);
+  const handleToast = () => {
+    toast.error('Ce site étant une démo, vous ne pouvez pas effectuer d\'achat')
+  }
+
+  const cart = useSelector(state => state.productState);
   const dispatch = useDispatch();
 
   Object.keys(cart.products).forEach(function(item) {
     if (cart.products[item].inCart) {
-      productsInCart.push(cart.products[item]);  
-      
+      productsInCart.push(cart.products[item]);
     }
   });
-
-
 
   productsInCart = productsInCart.map((product, index) => {
     return (
       <Fragment key={index}>
         <tr>
           <td>
-            <img src={require(`../../images/${product.images}.jpeg`)} alt="" height="50" width="50"></img>
-            <span className='product-name-cart'>{product.name}</span>
+            <img
+              src={require(`../../images/${product.images}.jpeg`)}
+              alt=""
+              height="50"
+              width="50"
+            ></img>
+            <span className="product-name-cart">{product.name}</span>
           </td>
           <td>${parseFloat(product.price).toFixed(2)}</td>
           <td>
-            <div className='cart-quantity'>
-              <span id= 'classy'><FontAwesome
-                name="fas fa-minus"
-                onClick={() => dispatch(decreaseCart(product.id -1))}
-              /></span>
-             <span><input placeholder={product.numbers}></input></span> 
+            <div className="cart-quantity">
+              <span
+                className="number"
+                onClick={() => dispatch(decreaseCart(product.id - 1))}
+              >
+                <FontAwesome name="fas fa-minus" />
+              </span>
               <span>
-              <FontAwesome
-                name="fas fa-plus"
-                onClick={() => dispatch(increaseCart(product.id -1))}
-              />
-                </span>
+                <input placeholder={product.numbers}></input>
+              </span>
+              <span className="number">
+                <FontAwesome
+                  name="fas fa-plus"
+                  onClick={() => dispatch(increaseCart(product.id - 1))}
+                />
+              </span>
             </div>
           </td>
           <td>${parseFloat(product.numbers * product.price).toFixed(2)}</td>
@@ -81,7 +85,9 @@ const Cart = () => {
           </tr>
         </tbody>
       </table>
-      <input type="submit" value="Continue to checkout" className="btn btn-success"></input>
+      <Link to="/payment" onClick={handleToast} className="btn btn-success">
+        Proceed to payment
+      </Link>
     </Container>
   );
 };

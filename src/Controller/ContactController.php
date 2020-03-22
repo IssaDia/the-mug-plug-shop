@@ -28,11 +28,25 @@ class ContactController extends AbstractController
 
 
         $form = $this->createFormBuilder($contact)
-            ->add('name', TextType::class)
+            ->add('name', TextType::class, [
+                'attr' => [
+                    'id'=>'name'
+                ]
+            ])
             ->add('email', EmailType::class)
             ->add('subject', TextType::class)
-            ->add('message', TextareaType::class)
-            ->add('save', SubmitType::class, ['label' => 'Envoyer'])
+            ->add('message', TextType::class)
+            ->add('save', SubmitType::class, [
+                'label' => 'Envoyer',
+                'attr' => [
+                    'class'=>'submit-btn'
+                ]
+                
+                
+                ]
+                
+                
+                )
             ->getForm();
 
 
