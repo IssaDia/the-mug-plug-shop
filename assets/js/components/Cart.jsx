@@ -1,20 +1,19 @@
 import React, { Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Container } from "react-bootstrap";
 import { increaseCart } from "../actions/quantityCart";
 import { decreaseCart } from "../actions/quantityCart";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
+
 
 var FontAwesome = require("react-fontawesome");
 
 const Cart = () => {
-
   let productsInCart = [];
 
   const handleToast = () => {
-    toast.error('Ce site étant une démo, vous ne pouvez pas effectuer d\'achat')
-  }
+    toast.error("Ce site étant une démo, vous ne pouvez pas effectuer d'achat");
+  };
 
   const cart = useSelector(state => state.productState);
   const dispatch = useDispatch();
@@ -65,30 +64,43 @@ const Cart = () => {
   });
 
   return (
-    <Container>
-      <table className="table">
-        <thead className="thead-dark">
-          <tr>
-            <th scope="col">PRODUCT</th>
-            <th scope="col">PRICE</th>
-            <th scope="col">QUANTITY</th>
-            <th scope="col">TOTAL</th>
-          </tr>
-        </thead>
-        <tbody>
-          {productsInCart}
-          <tr>
-            <td></td>
-            <td></td>
-            <td>Total Cart</td>
-            <td>${parseFloat(cart.cartCost).toFixed(2)}</td>
-          </tr>
-        </tbody>
-      </table>
-      <Link to="/payment" onClick={handleToast} className="btn btn-success">
-        Proceed to payment
+    <>
+      <Link className="previous previous-cart" to="/products">
+        &#8249; return to products
       </Link>
-    </Container>
+      <Breadcrumb>
+        <Breadcrumb.Item href="/#">Home</Breadcrumb.Item>
+        <Breadcrumb.Item href="/#/products">
+          Products
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>Cart</Breadcrumb.Item>
+      </Breadcrumb>
+
+      <div className="cart-container">
+        <table className="table">
+          <thead className="thead-dark">
+            <tr>
+              <th scope="col">PRODUCT</th>
+              <th scope="col">PRICE</th>
+              <th scope="col">QUANTITY</th>
+              <th scope="col">TOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            {productsInCart}
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Total Cart</td>
+              <td>${parseFloat(cart.cartCost).toFixed(2)}</td>
+            </tr>
+          </tbody>
+        </table>
+        <Link to="/payment" onClick={handleToast} className="btn btn-success">
+          Proceed to payment
+        </Link>
+      </div>
+    </>
   );
 };
 

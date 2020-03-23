@@ -1,7 +1,7 @@
 import '../css/app.css';
 import React from "react";
 import ReactDOM from 'react-dom';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch, browserHistory } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer';
 import Default from './components/Default';
@@ -16,6 +16,8 @@ import ChatPage from './pages/ChatPage';
 import PaymentPage from './pages/PaymentPage';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+
+
 
 const App = () => {
 

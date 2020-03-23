@@ -26,7 +26,6 @@ class ContactController extends AbstractController
     {
         $contact = new Contact();
 
-
         $form = $this->createFormBuilder($contact)
             ->add('name', TextType::class, [
                 'attr' => [
@@ -39,19 +38,10 @@ class ContactController extends AbstractController
             ->add('save', SubmitType::class, [
                 'label' => 'Envoyer',
                 'attr' => [
-                    'class'=>'submit-btn'
-                ]
-                
-                
-                ]
-                
-                
-                )
+                    'class'=>'submit-btn']])
             ->getForm();
 
-
         $form->handleRequest($request);
-
 
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -63,10 +53,12 @@ class ContactController extends AbstractController
                 ->setBody($this->renderView('app/email.html.twig', [
                     'contact' => $contact
                 ]), 'text/html');
+
             $mailer->send($message);
             $this->addFlash('success', 'Votre mail a bien été envoyé');
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('app');
         }
+        
 
 
         return $this->render('app/contact.html.twig', [

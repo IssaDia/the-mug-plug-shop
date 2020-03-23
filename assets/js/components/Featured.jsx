@@ -10,7 +10,7 @@ const Featured = () => {
 
   let featuredProducts = filter.map(featuredProduct => {
     return (
-      <>
+     
         <div key={featuredProduct.id} className="image card">
           <img
             src={require(`../../images/${featuredProduct.images}.jpeg`)}
@@ -25,7 +25,7 @@ const Featured = () => {
           </div>
           <span className="featured-price">{featuredProduct.price} $</span>
         </div>
-      </>
+     
     );
   });
 

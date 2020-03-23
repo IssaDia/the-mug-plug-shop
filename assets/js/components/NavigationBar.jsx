@@ -41,14 +41,14 @@ const NavigationBar = props => {
         </div>
         <div>
           <nav>
-            <div className="logo">
+            <Link to="/" className="logo navbar-brand">
             <img
           src={MugPlugLogo}
           alt=""
           height="100"
           width="100"
         ></img>
-            </div>
+            </Link>
             <ul className="nav-links">
               <li className="nav-link">
                 <Link to="/#">Home</Link>

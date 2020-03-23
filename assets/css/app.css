@@ -19,13 +19,14 @@ h1 span {
 h2 {
     font-size: 40px;
     padding-top: 40px;
+    text-align: center;
 }
 
 h3 {
     font-size: 16px;
 }
 
-h6{
+h6 {
     color: #ffffff;
 }
 
@@ -73,7 +74,7 @@ h6{
 
 /* Navbar */
 
-.sf-toolbar-clearer{
+.sf-toolbar-clearer {
     display: none !important;
 }
 
@@ -92,21 +93,21 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-  }
+}
 
-  .background-text h4{
-   font-size: 20px;
-  }
+.background-text h4 {
+    font-size: 20px;
+}
 
-  .background-text h5{
+.background-text h5 {
     font-size: 70px;
     font-family: 'Liu Jian Mao Cao', cursive;
 
-   }
- 
+}
+
 
 .logo {
-   float: left;
+    float: left;
 }
 
 .nav-links {
@@ -177,9 +178,11 @@ nav {
     .nav-links li {
         opacity: 0;
     }
+
     .nav-links li a {
         color: #ffffff;
     }
+
     .burger {
         display: block;
         cursor: pointer;
@@ -512,19 +515,19 @@ footer .social a:hover {
 .git {
     background-color: #3D5B94;
     font-size: 1.2em;
-    width: 20%;
+    width: 33%;
 }
 
 .contact {
     background-color: #6dcd9a;
     font-size: 0.8em;
-    width: 40%;
+    width: 33%;
 }
 
 .linkedin {
     background-color: #1E83AE;
     font-size: 1.2em;
-    width: 20%;
+    width: 33%;
 }
 
 
@@ -569,7 +572,7 @@ footer .social a:hover {
     font-size: 12px;
     padding-top: 10px;
     margin-bottom: O !important;
-    
+
 }
 
 .price {
@@ -613,8 +616,7 @@ footer .social a:hover {
 }
 
 .products img {
-    width: 75px;
-
+   display: none;
 }
 
 .basketTotalContainer {
@@ -655,6 +657,14 @@ footer .social a:hover {
 
 }
 
+.cart-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+
 
 .cart-quantity span {
     display: inline-block;
@@ -691,6 +701,7 @@ footer .social a:hover {
 /* Jumbotron */
 
 .jumbo-products-homepage {
+    margin-top: 150px;
     text-align: center;
     background-color: #000000;
     color: #ffffff;
@@ -703,7 +714,7 @@ footer .social a:hover {
 .jumbo-chat-homepage {
     background-image: url('../images/chat-wallpaper.jpg');
     text-align: center;
-
+    margin-bottom: 150px;
     width: 100%;
     border: 4px solid black;
     margin-top: 80px;
@@ -769,18 +780,18 @@ footer .social a:hover {
 /* Payment Component */
 
 
-  .rounded-lg {
+.rounded-lg {
     border-radius: 1rem;
     margin-top: 40px;
-  }
-  
-  .nav-pills .nav-link {
+}
+
+.nav-pills .nav-link {
     color: #555;
-  }
-  
-  .nav-pills .nav-link.active {
+}
+
+.nav-pills .nav-link.active {
     color: #fff;
-  }
+}
 
 
 
@@ -791,29 +802,31 @@ footer .social a:hover {
     max-width: 800px;
     margin: 50px auto;
     position: relative;
-  
-  }
-  .get-in-touch .title {
+
+}
+
+.get-in-touch .title {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 3.2em;
     line-height: 48px;
     padding-bottom: 48px;
-       color: #5543ca;
-      background: #5543ca;
-      background: -moz-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
-      background: -webkit-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
-      background: linear-gradient(to right,#f4524d  0%,#5543ca  100%) !important;
-      -webkit-background-clip: text !important;
-      -webkit-text-fill-color: transparent !important;
-  }
-  
-  .contact-form .form-field {
+    color: #5543ca;
+    background: #5543ca;
+    background: -moz-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
+    background: -webkit-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
+    background: linear-gradient(to right, #f4524d 0%, #5543ca 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.contact-form .form-field {
     position: relative;
     margin: 32px 0;
-  }
-  .contact-form .input-text {
+}
+
+.contact-form .input-text {
     display: block;
     width: 100%;
     height: 36px;
@@ -822,17 +835,20 @@ footer .social a:hover {
     font-size: 18px;
     line-height: 26px;
     font-weight: 400;
-  }
-  .contact-form .input-text:focus {
+}
+
+.contact-form .input-text:focus {
     outline: none;
     border: #ffffff;
-  }
-  .contact-form .input-text:focus + .label,
-  .contact-form .input-text.not-empty + .label {
+}
+
+.contact-form .input-text:focus+.label,
+.contact-form .input-text.not-empty+.label {
     -webkit-transform: translateY(-24px);
-            transform: translateY(-24px);
-  }
-  .contact-form .label {
+    transform: translateY(-24px);
+}
+
+.contact-form .label {
     position: absolute;
     left: 20px;
     bottom: 11px;
@@ -843,50 +859,56 @@ footer .social a:hover {
     cursor: text;
     transition: -webkit-transform .2s ease-in-out;
     transition: transform .2s ease-in-out;
-    transition: transform .2s ease-in-out, 
-    -webkit-transform .2s ease-in-out;
-  }
-  .contact-form .submit-btn {
+    transition: transform .2s ease-in-out,
+        -webkit-transform .2s ease-in-out;
+}
+
+.contact-form .submit-btn {
     display: inline-block;
     background-color: #000;
-     background-image: linear-gradient(125deg,#a72879,#064497);
+    background-image: linear-gradient(125deg, #a72879, #064497);
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 16px;
     padding: 8px 16px;
     border: none;
-    width:200px;
+    width: 200px;
     cursor: pointer;
-  }
+}
 
-  .contact-form .form-control {
-      background-color: #ffffff !important;
-  }
+.contact-form .form-control {
+    background-color: #ffffff !important;
+}
 
-  /* Featured Component */
+/* Featured Component */
 
-  .featured-price, .featured-promo {
-      color: red;
-      font-size: 24px;
-      
-  }
+.featured-price,
+.featured-promo {
+    color: red;
+    font-size: 24px;
 
-  .featured-container {
-    
+}
+
+.featured-container {
+
     text-align: center;
 }
 
-.featured-products-container{
+.featured-products-container {
     padding-bottom: 20px;
 }
-  
-  
 
+/* Previous Button */
 
+.previous a {
+    margin-top: 95px !important;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
 
-
-
-
-
-
+.previous a:hover {
+    background-color: #ddd;
+    color: black;
+  }

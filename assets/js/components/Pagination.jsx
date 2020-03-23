@@ -9,8 +9,6 @@ const Pagination = ({itemsPerPage, length, handlePageChange, currentPage}) => {
       pages.push(i);
     }
 
-      console.log(pages);
-
       const pagination = pages.map(page => {
         return (
           <li

@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Pagination from "./Pagination";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { addBasket } from "../actions/addBasket";
 import { getProduct } from "../actions/getProduct";
 
+
 const Products = () => {
+
   const products = useSelector(state => state.productState.products);
   const dispatch = useDispatch();
+  
 
   const [currentPage, setcurrentPage] = useState(1);
 
@@ -56,6 +59,7 @@ const Products = () => {
 
   return (
     <>
+      
       <Container className="products-container">{productList}</Container>
 
       <div className="pagination-block">
