@@ -1,20 +1,50 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addBasket } from "../actions/addBasket";
+import { Link} from "react-router-dom";
+
+
 
 const SingleProductPage = props => {
+
   const id = props.match.params.id;
+  const dispatch = useDispatch();
 
   let product = useSelector(state => state.productState.products[id]);
 
   return (
     <>
-    <div className='single-product-container'>
-    <h1>{product.name}</h1>;
-      <img src={require(`../../images/${product.images}.jpeg`)} alt="" height="300" width="300"></img>
-      <p>{product.price} $</p>
-    </div>
-    
-     
+      <div className="wrapper single-product-container">
+        <div className="container-product">
+          <img
+            src={require(`../../images/${product.images}.jpeg`)}
+            alt=""
+            width="100%"
+            className="top"
+          ></img>
+          <div className="bottom">
+            <div className="left">
+              <div className="details">
+                <h1>{product.name}</h1>
+                <p>${product.price}</p>
+              </div>
+              <div className="buy">
+                <Link
+                  className="cart-click"
+                  onClick={() => {
+                    dispatch(addBasket(product.id - 1));
+                  }}
+                >
+                  <i className="material-icons">add_shopping_cart</i>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="inside">
+          <div className="contents"></div>
+        </div>
+      </div>
     </>
   );
 };

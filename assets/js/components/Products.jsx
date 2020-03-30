@@ -2,16 +2,14 @@ import React, { useState, useEffect } from "react";
 import Pagination from "./Pagination";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { Container } from "react-bootstrap";
-import { addBasket } from "../actions/addBasket";
 import { getProduct } from "../actions/getProduct";
-
+import { Container, Row, Col } from "react-bootstrap";
+import { addBasket } from "../actions/addBasket";
 
 const Products = () => {
-
+ 
   const products = useSelector(state => state.productState.products);
   const dispatch = useDispatch();
-  
 
   const [currentPage, setcurrentPage] = useState(1);
 
@@ -27,50 +25,70 @@ const Products = () => {
 
   const productList = paginatedProducts.map(product => {
     return (
-      <div key={product.id} className="image card">
-        <img
-          src={require(`../../images/${product.images}.jpeg`)}
-          alt=""
-          height="300"
-          width="300"
-        ></img>
-        <div className="product-text">
-          <p>
-            <strong>{product.name}</strong>
-          </p>
-          <span className="product-price">{product.price} $</span>
-          <Link
-            to={`/products/${product.id}`}
-            className="btn btn-dark btn-detail"
-            onClick={() => dispatch(getProduct(product.id))}
-          >
-            Détail
-          </Link>
+     
+        <Col>
+      <div className="wrapper" key={product.id}>
+        <div className="container-product">
+          <img
+            src={require(`../../images/${product.images}.jpeg`)}
+            alt=""
+            width="100%"
+            className="top"
+          ></img>
+          <div className="bottom">
+            <div className="left">
+              <div className="details">
+                <h1>{product.name}</h1>
+                <p>${product.price}</p>
+              </div>
+              <div className="buy">
+                <Link
+                  className="cart-click"
+                  onClick={() => {
+                    dispatch(addBasket(product.id - 1));
+                  }}
+                >
+                  <i className="material-icons">add_shopping_cart</i>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-        <a
-          onClick={() => dispatch(addBasket(product.id - 1))}
-          className="addToCart cart"
-        >
-          Add to cart
-        </a>
+        <div className="inside">
+          <div className="icon">
+            <Link
+              to={`/products/${product.id}`}
+              onClick={() => dispatch(getProduct(product.id))}
+            >
+              <i className="material-icons">info_outline</i>
+            </Link>
+          </div>
+          <div className="contents"></div>
+        </div>
       </div>
+      </Col>
+     
     );
   });
 
+
+
   return (
     <>
+      <Container>
+      <Row>
+        {productList}
+        </Row>
+        </Container>
+      <ul className="pagination">
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          length={products.length}
+          handlePageChange={handlePageChange}
+        ></Pagination>
+      </ul>
       
-      <Container className="products-container">{productList}</Container>
 
-      <div className="pagination-block">
-        <ul className="pagination">
-          <Pagination
-            itemsPerPage={itemsPerPage}
-            length={products.length}
-            handlePageChange={handlePageChange}
-          ></Pagination>
-        </ul>
-      </div>
     </>
   );
 };
