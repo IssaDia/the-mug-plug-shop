@@ -1,6 +1,11 @@
 import {
-    USER_SIGNUP, USER_LOGIN
+    USER_SIGNUP,
+    USER_LOGIN
 } from '../actions/type';
+
+{
+    /*do something when form actions are pulled */
+  }
 
 
 
@@ -9,10 +14,6 @@ export default function userReducer(state = [], action) {
 
         case USER_SIGNUP:
 
-        console.log(state);
-        
-        console.log('success');
-        
             return [...state, action.payload];
         case USER_LOGIN:
 

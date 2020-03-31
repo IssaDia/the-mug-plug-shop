@@ -1,7 +1,10 @@
 import React from "react";
 
+{
+  /*Form to proceed a payment (non active)*/
+}
+
 const Payment = () => {
-   
   return (
     <>
       <div className="row">
@@ -21,7 +24,6 @@ const Payment = () => {
                   Credit Card
                 </a>
               </li>
-          
             </ul>
 
             <div className="tab-content">

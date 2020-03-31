@@ -4,6 +4,9 @@ import Col from "react-bootstrap/Col";
 
 var FontAwesome = require("react-fontawesome");
 
+{
+  /*Footer Widget*/
+}
 
 const Footer = () => {
   return (
@@ -19,7 +22,9 @@ const Footer = () => {
             height="352"
             width="470"
           >
-            <span><FontAwesome name="fas fa-envelope" /></span> 
+            <span>
+              <FontAwesome name="fas fa-envelope" />
+            </span>
           </a>
           <a href="https://github.com/IssaDia/" className="git">
             Git

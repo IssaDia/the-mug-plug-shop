@@ -1,6 +1,10 @@
 import { FETCH_PRODUCTS } from './type';
 import axios from 'axios';
 
+{
+  /* action to get all products from database via axios */
+}
+
 export const getProductsFromApi = (products) => {
     return {
       type: FETCH_PRODUCTS,

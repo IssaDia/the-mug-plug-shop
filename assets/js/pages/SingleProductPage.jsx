@@ -1,16 +1,34 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addBasket } from "../actions/addBasket";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-
+{
+  /*Page with single product */
+}
 
 const SingleProductPage = props => {
+  {
+    /*get id from product clicked in product list*/
+  }
 
   const id = props.match.params.id;
+
+  {
+    /*hook to get actions from redux*/
+  }
+
   const dispatch = useDispatch();
 
+  {
+    /*hook to get all poducts from store*/
+  }
+
   let product = useSelector(state => state.productState.products[id]);
+
+  {
+    /*Display single product in card (working on CSS still)*/
+  }
 
   return (
     <>

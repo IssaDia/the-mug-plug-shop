@@ -2,10 +2,10 @@ import '../css/app.css';
 import '../css/app.scss';
 import React from "react";
 import ReactDOM from 'react-dom';
-import { HashRouter, Route, Switch, browserHistory } from 'react-router-dom';
+import { HashRouter, Route, Switch} from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer';
-import Default from './components/Default';
+import NotFound from './components/NotFound';
 import Cart from './components/Cart';
 import Homepage from './pages/Homepage';
 import { Provider } from 'react-redux';
@@ -15,10 +15,12 @@ import SingleProductPage from './pages/SingleProductPage';
 import Connexion from './pages/Connexion';
 import ChatPage from './pages/ChatPage';
 import PaymentPage from './pages/PaymentPage';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
-
+{
+  /*main component who display all compoenents and pages */
+}
 
 const App = () => {
 
@@ -35,13 +37,13 @@ const App = () => {
                   <Route path="/connexion" component={Connexion}/>
                   <Route path="/chat" component={ChatPage}/>
                   <Route path="/payment" component={PaymentPage}/>
-                  <Route path="/" component={Homepage}/>
-                  <Route component={Default} /> 
+                  <Route exact path="/" component={Homepage}/>
+                  <Route component={NotFound} /> 
               </Switch>
           <Footer />
         </Provider>          
     </HashRouter> 
-    <ToastContainer></ToastContainer>
+    <ToastContainer />
     </>
 
     );

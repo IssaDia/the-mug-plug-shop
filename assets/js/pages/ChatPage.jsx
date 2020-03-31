@@ -1,13 +1,11 @@
-import React from 'react';
-import { Container } from "react-bootstrap";
+import React from "react";
 
+{
+  /*Page for Chat (not used yet)*/
+}
 
 const ChatPage = () => {
-    return ( 
-        <Container>
-        <h1>Connexion</h1>
-        </Container>
-     );
-}
- 
+  return <h1>Connexion</h1>;
+};
+
 export default ChatPage;

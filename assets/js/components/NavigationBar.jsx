@@ -1,9 +1,4 @@
 import React, { useEffect } from "react";
-import $ from "jquery";
-import { Navbar, Nav } from "react-bootstrap";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import ButtonToolbar from "react-bootstrap/Button";
-import Popover from "react-bootstrap/Popover";
 import MugPlugLogo from "../../images/MugPlugLogo.png";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -22,7 +17,7 @@ const NavigationBar = props => {
 
         navLinks.forEach((link, index) => {
           link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 +
-            0.5}s`;
+            0.7}s`;
         });
 
         burger.classList.toggle("toggle");
@@ -36,19 +31,16 @@ const NavigationBar = props => {
     <>
       <div className="bg-img">
         <div className="background-text">
-          <h4>Découvrez</h4>
           <h5>The Mug Plug</h5>
+          <p>site de vente de Mugs Personnalisés</p>
         </div>
         <div>
-          <nav>
-            <Link to="/" className="logo navbar-brand">
-            <img
-          src={MugPlugLogo}
-          alt=""
-          height="100"
-          width="100"
-        ></img>
-            </Link>
+        <div className="logo">
+                <Link to="/" className="d-flex flex-row">
+                  <img src={MugPlugLogo} alt="" height="100" width="100"></img>
+                </Link>
+              </div>
+          <nav>      
             <ul className="nav-links">
               <li className="nav-link">
                 <Link to="/#">Home</Link>
@@ -63,7 +55,6 @@ const NavigationBar = props => {
                 </Link>
               </li>
               <li>
-               
                 <a href="http://127.0.0.1:8000/contact" className="nav-link">
                   Contact
                 </a>

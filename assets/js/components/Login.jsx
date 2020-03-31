@@ -1,13 +1,29 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+{
+  /* Component permitting to connect to Api via axios*/
+}
+
 const Login = () => {
+  {
+    /*state to get form data*/
+  }
+
   const [credentials, setCredentials] = useState({
     username: "",
     password: ""
   });
 
+  {
+    /*error state to display error messages if necessary*/
+  }
+
   const [error, setError] = useState("");
+
+  {
+    /* function to store form data in credentials state*/
+  }
 
   const handleChange = event => {
     const value = event.currentTarget.value;
@@ -15,15 +31,18 @@ const Login = () => {
     setCredentials({ ...credentials, [name]: value });
   };
 
+  {
+    /* function to get user token when form is submitted*/
+  }
+
   const handleSubmit = async event => {
     event.preventDefault();
     try {
-      const token = 
-      await axios
+      const token = await axios
         .post("http://127.0.0.1:8000/api/login_check", credentials)
         .then(response => response.data.token);
-        window.localStorage.setItem('authToken', token);
-        axios.defaults.headers['Authorization'] = 'Bearer' + token;
+      window.localStorage.setItem("authToken", token);
+      axios.defaults.headers["Authorization"] = "Bearer" + token;
     } catch (error) {
       setError("Les informations ne correspondent pas");
     }
@@ -44,7 +63,7 @@ const Login = () => {
             placeholder="email"
             value={credentials.username}
             onChange={handleChange}
-            className={"form-control" + (error && " is-invalid" )}
+            className={"form-control" + (error && " is-invalid")}
           />
           {error && <p className="invalid-feedback">{error}</p>}
         </div>
@@ -59,7 +78,6 @@ const Login = () => {
             onChange={handleChange}
             className="form-control"
           />
-           
         </div>
         <button className="btn btn-success">connexion</button>
 

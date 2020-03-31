@@ -1,12 +1,13 @@
+{
+    /* all type of action */
+  }
+
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 export const FETCH_SINGLE_PRODUCT = 'FETCH_SINGLE_PRODUCT';
-
 export const GET_NUMBERS_BASKET = 'GET_NUMBERS_BASKET';
 export const ADD_BASKET = 'ADD_BASKET';
-
 export const INCREASE_QUANTITY_CART = 'INCREASE_QUANTITY_CART';
 export const DECREASE_QUANTITY_CART = 'DECREASE_QUANTITY_CART';
-
 export const USER_SIGNUP = 'USER_SIGNUP';
 export const USER_LOGIN = 'USER_LOGIN';
 

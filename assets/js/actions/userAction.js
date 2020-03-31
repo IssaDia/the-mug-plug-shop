@@ -1,6 +1,9 @@
 import { USER_SIGNUP } from './type';
-import axios from 'axios'
+import axios from 'axios';
 
+{
+  /*action to post User when form is submitted */
+}
 
 export const postUserSuccess =  (data) => {
   return {
@@ -14,8 +17,6 @@ export const postUserSuccess =  (data) => {
   }
 };
 
-
-
 export const postUser = (data) => {
   return (dispatch) => {
      axios.post("http://127.0.0.1:8000/api/users",data, {
@@ -27,9 +28,7 @@ export const postUser = (data) => {
       })
       .catch(error => {
         throw(console.log(error));
-      });
-
-      
+      });     
 
   };
     

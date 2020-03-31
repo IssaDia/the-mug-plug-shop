@@ -3,8 +3,12 @@ import {
   DECREASE_QUANTITY_CART
 } from './type';
 
+{
+  /* action to change number of items on cart for one product */
+}
+
 export const increaseCart = id => {
-  return (dispatch) => { 
+  return (dispatch) => {
     dispatch({
       type: INCREASE_QUANTITY_CART,
       payload: id
@@ -14,7 +18,7 @@ export const increaseCart = id => {
 };
 
 export const decreaseCart = id => {
-  return (dispatch) => { 
+  return (dispatch) => {
     dispatch({
       type: DECREASE_QUANTITY_CART,
       payload: id

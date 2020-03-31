@@ -16,55 +16,73 @@ const initialState = {
 export default function productReducer(state = initialState, action) {
     switch (action.type) {
         case FETCH_PRODUCTS:
-            let myArray = [];
-            for (let i = 0; i < action.products.length; i++) {
-                myArray.push(action.products[i]);
-            };
-            return {
-                ...state,
-                products: myArray
-            };
 
-        case FETCH_SINGLE_PRODUCT:
-            return state;
+        {
+            /* empty array to store all products*/
+        }
+        let myArray = [];
 
-        case ADD_BASKET:
-            let addQuantity = state.products[action.payload];
-            
+        {
+            /* loop to store all products in array*/
+        }
+        for (let i = 0; i < action.products.length; i++) {
+            myArray.push(action.products[i]);
+        };
+        return {
+            ...state,
+            products: myArray
+        };
 
-            addQuantity.inCart = true;
-            addQuantity.numbers += 1;
+    case FETCH_SINGLE_PRODUCT:
+        return state;
 
-            return {
-                ...state,
-                upBasket: state.upBasket + 1,
-                    cartCost: state.cartCost + state.products[action.payload].price,
+    case ADD_BASKET:
 
-            };
-        case GET_NUMBERS_BASKET:
-            return {
-                ...state
-            };
-        case INCREASE_QUANTITY_CART:
+    {
+        /* put product in cart and add quantity when addBasket action is pulled */
+    }
+    let product = state.products[action.payload];
+    product.inCart = true;
+    product.numbers += 1;
 
-            let increase = state.products[action.payload];
-            increase.numbers += 1;
-           
-            return {
-                ...state,
-                cartCost: state.cartCost + state.products[action.payload].price
-            };
-        case DECREASE_QUANTITY_CART:
+    return {
+        ...state,
+        upBasket: state.upBasket + 1,
+            cartCost: state.cartCost + state.products[action.payload].price,
 
-            let decrease = state.products[action.payload];
-            decrease.numbers -= 1;
+    };
+    case GET_NUMBERS_BASKET:
+        return {
+            ...state
+        };
+    case INCREASE_QUANTITY_CART:
 
-            return {
-                ...state,
-                cartCost: state.cartCost - state.products[action.payload].price
-            };
+    {
+        /*increase quantity of product in cart when quantity cart action is pulled */
+    }
 
-        default:
-            return state;
+    let increase = state.products[action.payload];
+    increase.numbers += 1;
+
+    return {
+        ...state,
+        cartCost: state.cartCost + state.products[action.payload].price
+    };
+    case DECREASE_QUANTITY_CART:
+
+        {
+            /*decrease quantity of product in cart when quantity cart action is pulled */
+          }
+
+        let decrease = state.products[action.payload];
+        decrease.numbers -= 1;
+
+        return {
+            ...state,
+            cartCost: state.cartCost - state.products[action.payload].price
+        };
+
+    default:
+        return state;
     }
 }

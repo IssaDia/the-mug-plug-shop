@@ -1,17 +1,17 @@
-import React from 'react';
-import FormAuth from '../components/FormAuth';
-import { Container } from "react-bootstrap";
+import React from "react";
+import FormAuth from "../components/FormAuth";
 
-
+{
+  /*Connexion page for chat (not used yet)*/
+}
 
 const Connexion = () => {
-    return ( 
+  return (
+    <div className="connexion-container">
+      <h1>Connexion</h1>
+      <FormAuth></FormAuth>
+    </div>
+  );
+};
 
-        <Container className='connexion-container'>
-        <h1>Connexion</h1>
-        <FormAuth></FormAuth>
-        </Container>
-     );
-}
- 
 export default Connexion;
