@@ -32,7 +32,7 @@ const NavigationBar = props => {
       <div className="bg-img">
         <div className="background-text">
           <h5>The Mug Plug</h5>
-          <p>site de vente de Mugs Personnalisés</p>
+          <p>selling orignals et personalized mugs</p>
         </div>
         <div>
         <div className="logo">
@@ -43,10 +43,10 @@ const NavigationBar = props => {
           <nav>      
             <ul className="nav-links">
               <li className="nav-link">
-                <Link to="/#">Home</Link>
+                <Link to="/#">HOME</Link>
               </li>
               <li className="nav-link">
-                <Link to="/products">Products</Link>
+                <Link to="/products">PRODUCTS</Link>
               </li>
               <li>
                 <Link to="/cart" className="nav-link">
@@ -56,7 +56,7 @@ const NavigationBar = props => {
               </li>
               <li>
                 <a href="http://127.0.0.1:8000/contact" className="nav-link">
-                  Contact
+                  CONTACT
                 </a>
               </li>
             </ul>

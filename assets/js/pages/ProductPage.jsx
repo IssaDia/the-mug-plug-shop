@@ -24,7 +24,9 @@ const ProductPage = () => {
           <Breadcrumb.Item href="/#">Home</Breadcrumb.Item>
           <Breadcrumb.Item active>Products</Breadcrumb.Item>
         </Breadcrumb>
-        <h2>Nos Mugs</h2>
+        <div className='category-title'>
+        <h2><span>Our Mugs</span></h2>
+        </div>
         <Products></Products>
      
     </>

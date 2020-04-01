@@ -15,6 +15,9 @@ const Jumbotron = props => {
       <button className="btn btn-dark">
         <Link to={{ pathname: `/${props.link}` }}>{props.buttonText}</Link>
       </button>
+      <div className="signal">
+        <span>{props.signal}</span>
+      </div>
     </Jumbo>
   );
 };

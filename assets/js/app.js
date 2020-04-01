@@ -1,5 +1,5 @@
 import '../css/app.css';
-import '../css/app.scss';
+import '../css/style.scss';
 import React from "react";
 import ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch} from 'react-router-dom';

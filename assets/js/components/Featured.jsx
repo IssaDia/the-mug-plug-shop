@@ -48,7 +48,9 @@ const Featured = () => {
 
   return (
     <div className="featured-container">
-      <h2>Featured Products</h2>
+      <div className='category-title'>
+        <h2><span>Featured Products</span></h2>
+        </div>
       <p className="featured-promo">Mugs for Sale</p>
       <Container>
         <Row>{featuredProducts}</Row>
