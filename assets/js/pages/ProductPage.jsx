@@ -2,6 +2,9 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Products from "../components/Products";
+import { useState } from "react";
+import Previous from "../components/Previous";
+
 
 {
   /*Page with Product List Component*/
@@ -9,26 +12,46 @@ import Products from "../components/Products";
 
 const ProductPage = () => {
   {
-    /*to get previous page*/
+    /*get value from select*/
   }
 
-  let history = useHistory();
+  const [value, setValue] = useState('creasing');
+
+  console.log(value);
+
+
+  let handleChange = (event) => {
+
+    setValue(event.target.value)
+
+    
+  
+    
+  }
+
+
 
   return (
     <>
-      <Link to="" className="previous" onClick={() => history.goBack()}>
-        &#8249; Previous
-      </Link>
-     
-        <Breadcrumb>
-          <Breadcrumb.Item href="/#">Home</Breadcrumb.Item>
-          <Breadcrumb.Item active>Products</Breadcrumb.Item>
-        </Breadcrumb>
-        <div className='category-title'>
-        <h2><span>Our Mugs</span></h2>
-        </div>
-        <Products></Products>
-     
+      <Previous text='Previous'></Previous>
+
+      <Breadcrumb>
+        <Breadcrumb.Item href="/#">HOME</Breadcrumb.Item>
+        <Breadcrumb.Item active>PRODUCTS</Breadcrumb.Item>
+      </Breadcrumb>
+      <div className="category-title">
+        <h2>
+          <span>Our Mugs</span>
+        </h2>
+      </div>
+      <label>
+          Sort :
+          <select onChange={handleChange}>
+            <option defaultValue value="increasing">Increasing price</option>
+            <option value="decreasing">Decreasing price</option>
+          </select>
+        </label>
+      <Products selectedValue={value}></Products>
     </>
   );
 };

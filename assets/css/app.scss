@@ -477,7 +477,7 @@ footer .social a:hover {
   margin-top: 80px;
   background-repeat: no-repeat;
   background-size: cover;
- 
+
 
 }
 
@@ -490,15 +490,24 @@ footer .social a:hover {
   margin-top: 10px;
   color: red;
   font-size: 20px;
-  
-    animation: Test 1s infinite;
+
+  animation: Test 1s infinite;
 }
-@keyframes Test{
-    0%{opacity: 1;}
-    50%{opacity: 0;}
-    100%{opacity: 1;}
+
+@keyframes Test {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
-  
+
 
 /* Pagination */
 
@@ -508,14 +517,12 @@ footer .social a:hover {
 }
 
 
-
 /* Single Product */
 
 .single-product-container {
   text-align: center;
   margin-top: 30px;
 }
-
 
 /* Payment Component */
 
@@ -646,11 +653,40 @@ footer .social a:hover {
 
 /* Previous Button */
 
-.previous a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
+.previous {
+  margin-top: 40px;
+  transition: all 0.1s ease-in-out, transform .2s;
+  font-size: 20px;
+  width: 200px;
+  height: 50px;
+  margin-left: 20px;
 }
+
+.previous-text {
+  margin-left: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
+.previous:hover .previous-text {
+
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s linear;
+
+
+}
+
+.previous:hover{
+  transform: scale(1.2);
+}
+
+.arrow {
+  margin-left: 20px;
+
+}
+
 
 
 .text {
@@ -801,10 +837,11 @@ $break-small: 406px;
 
 
 .breadcrumb {
-  
+
   margin: auto;
-  width: 350px;
+  width: 400px;
   padding-left: 150px;
+
 }
 
 

@@ -1,5 +1,5 @@
 import '../css/app.css';
-import '../css/style.scss';
+import '../css/app.scss';
 import React from "react";
 import ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch} from 'react-router-dom';
@@ -43,7 +43,9 @@ const App = () => {
           <Footer />
         </Provider>          
     </HashRouter> 
-    <ToastContainer />
+    <ToastContainer autoClose={2000}
+        className="toast-container"
+        toastClassName="dark-toast" />
     </>
 
     );

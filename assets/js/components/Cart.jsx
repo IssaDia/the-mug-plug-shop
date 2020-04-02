@@ -5,6 +5,7 @@ import { decreaseCart } from "../actions/quantityCart";
 import { Link } from "react-router-dom";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { toast } from "react-toastify";
+import Previous from "../components/Previous";
 
 var FontAwesome = require("react-fontawesome");
 
@@ -63,21 +64,26 @@ const Cart = () => {
           </td>
           <td>${parseFloat(product.price).toFixed(2)}</td>
           <td>
-            <div className="cart-quantity">
-              <span
-                className="number"
-                onClick={() => dispatch(decreaseCart(product.id - 1))}
-              >
+            <div
+              className="cart--move-quantity"
+              onClick={() => dispatch(decreaseCart(product.id - 1))}
+            >
+              <span className="number">
                 <FontAwesome name="fas fa-minus" />
               </span>
-              <span>
-                <input placeholder={product.numbers}></input>
-              </span>
-              <span className="number">
-                <FontAwesome
-                  name="fas fa-plus"
-                  onClick={() => dispatch(increaseCart(product.id - 1))}
-                />
+            </div>
+            <div className='cart-quantity'>
+            <span>
+              <input placeholder={product.numbers}></input>
+            </span>
+            </div>
+           
+            <div className="cart--move-quantity">
+              <span
+                className="number"
+                onClick={() => dispatch(increaseCart(product.id - 1))}
+              >
+                <FontAwesome name="fas fa-plus" />
               </span>
             </div>
           </td>
@@ -91,16 +97,14 @@ const Cart = () => {
     <>
       {/* link to go back to products page*/}
 
-      <Link className="previous previous-cart" to="/products">
-        &#8249; return to products
-      </Link>
+      <Previous text="Previous"></Previous>
 
       {/* Breadcrum using Bootstrap */}
 
       <Breadcrumb>
-        <Breadcrumb.Item href="/#">Home</Breadcrumb.Item>
-        <Breadcrumb.Item href="/#/products">Products</Breadcrumb.Item>
-        <Breadcrumb.Item active>Cart</Breadcrumb.Item>
+        <Breadcrumb.Item href="/#">HOME</Breadcrumb.Item>
+        <Breadcrumb.Item href="/#/products">PRODUCTS</Breadcrumb.Item>
+        <Breadcrumb.Item active>CART</Breadcrumb.Item>
       </Breadcrumb>
 
       {/* Bootstrap table to display products in cart */}

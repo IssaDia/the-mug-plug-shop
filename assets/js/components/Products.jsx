@@ -5,12 +5,14 @@ import { Link, useHistory } from "react-router-dom";
 import { getProduct } from "../actions/getProduct";
 import { Row, Col } from "react-bootstrap";
 import { addBasket } from "../actions/addBasket";
+import { toast } from "react-toastify";
+
 
 {
   /*Component with display of all products*/
 }
 
-const Products = () => {
+const Products = props => {
   {
     /*hook to get all the products from store*/
   }
@@ -45,13 +47,31 @@ const Products = () => {
 
   const start = currentPage * itemsPerPage - itemsPerPage;
 
-      {/*javascript function to get products for each page of pagination*/}
-
+  {
+    /*javascript function to get products for each page of pagination*/
+  }
 
   const paginatedProducts = products.slice(start, start + itemsPerPage);
 
-      {/*loop to display all products in cards with function to add to cart or go to a product page*/}
+  {
+    /*loop to display all products in cards with function to add to cart or go to a product page*/
+  }
 
+  {
+    /* flash message when trying to do a payment*/
+  }
+
+  const handleToast = () => {
+    toast.success(<div>Added to cart &#10003;</div>);
+  };
+
+
+  {
+    /* prop value from select*/
+  }
+
+  console.log(props.selectedValue);
+  
 
   const productList = paginatedProducts.map(product => {
     return (
@@ -74,7 +94,7 @@ const Products = () => {
                   <Link
                     className="cart-click"
                     onClick={() => {
-                      dispatch(addBasket(product.id - 1));
+                      dispatch(addBasket(product.id - 1));handleToast()
                     }}
                   >
                     <i className="material-icons">add_shopping_cart</i>

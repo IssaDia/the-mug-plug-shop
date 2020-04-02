@@ -1,6 +1,7 @@
 import React from "react";
 import Payment from "../components/Payment";
 import { Link, useHistory } from "react-router-dom";
+import Previous from "../components/Previous";
 
 {
   /*Page with Payment Widget*/
@@ -15,9 +16,7 @@ const PaymentPage = () => {
 
   return (
     <>
-      <Link to="" className="previous" onClick={() => history.goBack()}>
-        &#8249; Previous
-      </Link>
+      <Previous text='Previous'></Previous>
       <Payment></Payment>
     </>
   );

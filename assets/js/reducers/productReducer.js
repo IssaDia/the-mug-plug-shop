@@ -66,6 +66,7 @@ export default function productReducer(state = initialState, action) {
 
     return {
         ...state,
+        upBasket: state.upBasket + 1,
         cartCost: state.cartCost + state.products[action.payload].price
     };
     case DECREASE_QUANTITY_CART:
@@ -79,6 +80,7 @@ export default function productReducer(state = initialState, action) {
 
         return {
             ...state,
+            upBasket: state.upBasket - 1,
             cartCost: state.cartCost - state.products[action.payload].price
         };
 
