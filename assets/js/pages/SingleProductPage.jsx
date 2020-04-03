@@ -32,6 +32,11 @@ const SingleProductPage = props => {
 
   return (
     <>
+    <div className="category-title">
+        <h2>
+          <span>{product.name}</span>
+        </h2>
+      </div>
       <div className="wrapper single-product-container">
         <div className="container-product">
           <img
