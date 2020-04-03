@@ -15,8 +15,10 @@ import SingleProductPage from './pages/SingleProductPage';
 import Connexion from './pages/Connexion';
 import ChatPage from './pages/ChatPage';
 import PaymentPage from './pages/PaymentPage';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+
+
 
 {
   /*main component who display all compoenents and pages */
@@ -39,6 +41,7 @@ const App = () => {
                   <Route path="/payment" component={PaymentPage}/>
                   <Route exact path="/" component={Homepage}/>
                   <Route component={NotFound} /> 
+                  
               </Switch>
           <Footer />
         </Provider>          

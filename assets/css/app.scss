@@ -17,7 +17,7 @@ h1 span {
 }
 
 h2 {
-  font-size: 60px;
+  font-size: 44px;
   width: 100%;
   text-align: center;
   border-bottom: 1px solid #000;
@@ -423,6 +423,10 @@ footer .social a:hover {
   padding-bottom: 100px;
 }
 
+.cart-unity {
+  display: flex;
+}
+
 
 .cart-quantity span {
   display: inline-block;
@@ -678,7 +682,7 @@ footer .social a:hover {
 
 }
 
-.previous:hover{
+.previous:hover {
   transform: scale(1.2);
 }
 
@@ -903,4 +907,23 @@ $break-small: 406px;
   bottom: 0px;
   left: 0;
   right: 0;
+}
+
+/* Sort */
+
+.sort {
+
+  display: flex;
+  margin-left: 15px;
+
+}
+
+/* Sort */
+
+.search {
+
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 80px;
+
 }

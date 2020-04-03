@@ -64,27 +64,19 @@ const Cart = () => {
           </td>
           <td>${parseFloat(product.price).toFixed(2)}</td>
           <td>
-            <div
-              className="cart--move-quantity"
-              onClick={() => dispatch(decreaseCart(product.id - 1))}
-            >
-              <span className="number">
+            <div className="cart-unity">
+              <Link onClick={() => dispatch(decreaseCart(product.id - 1))}>
                 <FontAwesome name="fas fa-minus" />
-              </span>
-            </div>
-            <div className='cart-quantity'>
-            <span>
-              <input placeholder={product.numbers}></input>
-            </span>
-            </div>
-           
-            <div className="cart--move-quantity">
-              <span
-                className="number"
-                onClick={() => dispatch(increaseCart(product.id - 1))}
-              >
+              </Link>
+              <div className="cart-quantity">
+                <span>
+                  <input placeholder={product.numbers}></input>
+                </span>
+              </div>
+
+              <Link onClick={() => dispatch(increaseCart(product.id - 1))}>
                 <FontAwesome name="fas fa-plus" />
-              </span>
+              </Link>
             </div>
           </td>
           <td>${parseFloat(product.numbers * product.price).toFixed(2)}</td>
@@ -106,6 +98,11 @@ const Cart = () => {
         <Breadcrumb.Item href="/#/products">PRODUCTS</Breadcrumb.Item>
         <Breadcrumb.Item active>CART</Breadcrumb.Item>
       </Breadcrumb>
+      <div className="category-title">
+        <h2>
+          <span>Cart</span>
+        </h2>
+      </div>
 
       {/* Bootstrap table to display products in cart */}
 

@@ -12,7 +12,7 @@ const Previous = props => {
 
   return (
     <div className="previous ">
-      <Link onClick={() => history.goBack()} style={{ textDecoration: 'none' }}>
+      <Link to="/" className="disabledCursor" onClick={() => history.goBack()} style={{ textDecoration: 'none' }}>
         <FontAwesome name="fas fa-arrow-left" className="arrow" />
         <span className="previous-text">{props.text}</span>
       </Link>
