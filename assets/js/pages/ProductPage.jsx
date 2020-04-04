@@ -23,7 +23,7 @@ const ProductPage = () => {
     /*get value from select*/
   }
 
-  const [value, setValue] = useState("creasing");
+  const [value, setValue] = useState("increasing");
 
   const [search, setsearch] = useState("");
 
@@ -37,7 +37,6 @@ const ProductPage = () => {
 
   const handleInput = e => {
     setsearch(e.target.value);
-    console.log(search);
   };
 
   {
@@ -60,9 +59,9 @@ const ProductPage = () => {
           <span>Mugs</span>
         </h2>
       </div>
-      <Row>
+      <Row className='content-container'>
         <Col className="sort">
-          <p>Sort :</p>
+          <p>Sort </p>
           <label>
             <select onChange={handleChange}>
               <option defaultValue value="increasing">
@@ -73,15 +72,22 @@ const ProductPage = () => {
           </label>
         </Col>
         <Col className="search">
-          <p>search by name :</p>
+          <p>search by name </p>
           <SearchBox handleInput={handleInput}></SearchBox>
         </Col>
       </Row>
 
-      <ProductList
-        selectedValue={value}
-        searchedProducts={searchedProducts}
-      ></ProductList>
+      {searchedProducts.length == 0 ? 
+      
+      <h4>No matches found</h4>
+  
+    :
+    <ProductList
+      selectedValue={value}
+      searchedProducts={searchedProducts}
+    ></ProductList>
+      }
+      
     </>
   );
 };

@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addBasket } from "../actions/addBasket";
-import { Link } from "react-router-dom";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
+import Previous from "../components/Previous";
 
 {
   /*Page with single product */
@@ -32,7 +33,13 @@ const SingleProductPage = props => {
 
   return (
     <>
-    <div className="category-title">
+      <Previous text="Previous"></Previous>
+      <Breadcrumb>
+        <Breadcrumb.Item href="/#">HOME</Breadcrumb.Item>
+        <Breadcrumb.Item>PRODUCTS</Breadcrumb.Item>
+        <Breadcrumb.Item active>{product.name}</Breadcrumb.Item>
+      </Breadcrumb>
+      <div className="category-title">
         <h2>
           <span>{product.name}</span>
         </h2>
@@ -52,14 +59,15 @@ const SingleProductPage = props => {
                 <p>${product.price}</p>
               </div>
               <div className="buy">
-                <Link
+                <a
                   className="cart-click"
                   onClick={() => {
-                    dispatch(addBasket(product.id - 1));
+                    dispatch(addBasket(props.id - 1));
+                    handleToast();
                   }}
                 >
                   <i className="material-icons">add_shopping_cart</i>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

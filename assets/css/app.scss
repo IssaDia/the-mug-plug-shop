@@ -33,12 +33,24 @@ h2 span {
 }
 
 .category-title {
+
+  margin: auto;
+  margin-bottom: 80px;
   margin-top: 80px;
-  margin-bottom: 60px;
+  width: 90%;
 }
 
 h3 {
   font-size: 16px;
+}
+
+h4 {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 20px;
+  margin-bottom: 100px;
+
+
 }
 
 h6 {
@@ -839,13 +851,27 @@ $break-small: 406px;
   }
 }
 
+.cart-click {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 
 .breadcrumb {
 
-  margin: auto;
-  width: 400px;
-  padding-left: 150px;
+  
+  width: 100%;
+  margin-left: 60px;
+}
 
+.breadcrumb li {
+  text-align: center;
+  vertical-align: middle;
 }
 
 
@@ -914,8 +940,12 @@ $break-small: 406px;
 .sort {
 
   display: flex;
-  margin-left: 15px;
+  margin-left: 75px;
 
+}
+
+.search p {
+  margin-right: 5px;
 }
 
 /* Sort */
@@ -925,6 +955,9 @@ $break-small: 406px;
   display: flex;
   justify-content: flex-end;
   margin-right: 80px;
-  font-size: 20px;
 
+}
+
+.sort p {
+  margin-right: 5px;
 }

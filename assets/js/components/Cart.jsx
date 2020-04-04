@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { toast } from "react-toastify";
 import Previous from "../components/Previous";
+import { Row, Col } from "react-bootstrap";
 
 var FontAwesome = require("react-fontawesome");
 
@@ -65,18 +66,18 @@ const Cart = () => {
           <td>${parseFloat(product.price).toFixed(2)}</td>
           <td>
             <div className="cart-unity">
-              <Link onClick={() => dispatch(decreaseCart(product.id - 1))}>
+              <a className="cart-click" onClick={() => dispatch(decreaseCart(product.id - 1))}>
                 <FontAwesome name="fas fa-minus" />
-              </Link>
+              </a>
               <div className="cart-quantity">
                 <span>
                   <input placeholder={product.numbers}></input>
                 </span>
               </div>
 
-              <Link onClick={() => dispatch(increaseCart(product.id - 1))}>
+              <a className="cart-click" onClick={() => dispatch(increaseCart(product.id - 1))}>
                 <FontAwesome name="fas fa-plus" />
-              </Link>
+              </a>
             </div>
           </td>
           <td>${parseFloat(product.numbers * product.price).toFixed(2)}</td>
@@ -106,7 +107,10 @@ const Cart = () => {
 
       {/* Bootstrap table to display products in cart */}
 
-      <div className="cart-container">
+      <Col className='content-container'>
+      {(productsInCart.length > 0) ?
+      
+        <div>
         <table className="table">
           <thead className="thead-dark">
             <tr>
@@ -129,7 +133,15 @@ const Cart = () => {
         <Link to="/payment" onClick={handleToast} className="btn btn-success">
           Proceed to payment
         </Link>
-      </div>
+        </div>
+     
+      
+      
+     : <h4>No products in Cart</h4> }
+
+</Col>
+
+      
     </>
   );
 };
