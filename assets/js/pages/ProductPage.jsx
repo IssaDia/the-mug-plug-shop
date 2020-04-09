@@ -71,10 +71,9 @@ const ProductPage = () => {
             </select>
           </label>
         </Col>
-        <Col className="search">
-          <p>search by name </p>
-          <SearchBox handleInput={handleInput}></SearchBox>
-        </Col>
+          <Col className="search">
+            <SearchBox handleInput={handleInput}></SearchBox>
+          </Col>
       </Row>
 
       {searchedProducts.length == 0 ? 
