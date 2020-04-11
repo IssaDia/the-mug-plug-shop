@@ -58,7 +58,7 @@ Encore
 
     // enables Sass/SCSS support
     .enableSassLoader()
-    
+
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
@@ -72,13 +72,10 @@ Encore
 
     // uncomment if you use API Platform Admin (composer req api-admin)
     .enableReactPreset()
-    //.addEntry('admin', './assets/js/admin.js')
+//.addEntry('admin', './assets/js/admin.js')
 
-    Encore.configureDefinePlugin(options => {
-        options['process.env'].API_URL = process.env.API_URL;
-    })
-;
+Encore.configureDefinePlugin(options => {
+    options['process.env'].API_URL = process.env.API_URL;
+});
 
 module.exports = Encore.getWebpackConfig();
-
-
