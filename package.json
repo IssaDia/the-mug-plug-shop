@@ -48,6 +48,6 @@
         "styled-components": "^5.0.1"
     },
     "engines": {
-        "npm": "10.2.0"
+        "node": "10.2.x"
     }
 }
