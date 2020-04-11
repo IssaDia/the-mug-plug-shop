@@ -1,4 +1,6 @@
-import { FETCH_PRODUCTS } from './type';
+import {
+  FETCH_PRODUCTS
+} from './type';
 import axios from 'axios';
 
 const API_URL = process.env.API_URL;
@@ -8,28 +10,28 @@ const API_URL = process.env.API_URL;
 }
 
 export const getProductsFromApi = (products) => {
-    return {
-      type: FETCH_PRODUCTS,
-      products
-    }
-  };
+  return {
+    type: FETCH_PRODUCTS,
+    products
+  }
+};
 
 export const getProducts = () => {
   return (dispatch) => {
-      axios 
-      .get( API_URL + "products",{
+    axios
+      .get(API_URL + "products", {
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }})
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
       .then(response => {
         dispatch(getProductsFromApi(response.data))
       })
       .catch(error => {
-        throw(error);
+        throw (error);
       });
-    
-    }
-    
-}
 
+  }
+
+}
