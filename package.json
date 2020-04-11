@@ -9,6 +9,7 @@
         "regenerator-runtime": "^0.13.2",
         "sass-loader": "^7.3.1",
         "webpack": "^4.42.0",
+        "webpack-cli": "^3.3.11",
         "webpack-notifier": "^1.6.0"
     },
     "license": "UNLICENSED",
@@ -20,6 +21,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "webpack-dev-server": "^2.9.7",
         "@fortawesome/fontawesome-svg-core": "^1.2.27",
         "@fortawesome/free-solid-svg-icons": "^5.12.1",
         "@fortawesome/react-fontawesome": "^0.1.9",
@@ -46,7 +48,6 @@
         "styled-components": "^5.0.1"
     },
     "engines": {
-        "npm": "8.10.0"
-        
-      }
+        "npm": "10.2.0"
+    }
 }
