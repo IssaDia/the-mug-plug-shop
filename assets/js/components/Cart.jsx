@@ -28,7 +28,7 @@ const Cart = () => {
     /* hook to get all products from store*/
   }
 
-  const cart = useSelector(state => state.productState);
+  const cart = useSelector((state) => state.productState);
 
   {
     /*  hook to use redux actions */
@@ -40,7 +40,7 @@ const Cart = () => {
     /* javascript function to push all products in cart in a specific array*/
   }
 
-  Object.keys(cart.products).forEach(function(item) {
+  Object.keys(cart.products).forEach(function (item) {
     if (cart.products[item].inCart) {
       productsInCart.push(cart.products[item]);
     }
@@ -66,7 +66,10 @@ const Cart = () => {
           <td>${parseFloat(product.price).toFixed(2)}</td>
           <td>
             <div className="cart-unity">
-              <a className="cart-click" onClick={() => dispatch(decreaseCart(product.id - 1))}>
+              <a
+                className="cart-click"
+                onClick={() => dispatch(decreaseCart(product.id - 1))}
+              >
                 <FontAwesome name="fas fa-minus" />
               </a>
               <div className="cart-quantity">
@@ -75,7 +78,10 @@ const Cart = () => {
                 </span>
               </div>
 
-              <a className="cart-click" onClick={() => dispatch(increaseCart(product.id - 1))}>
+              <a
+                className="cart-click"
+                onClick={() => dispatch(increaseCart(product.id - 1))}
+              >
                 <FontAwesome name="fas fa-plus" />
               </a>
             </div>
@@ -107,41 +113,40 @@ const Cart = () => {
 
       {/* Bootstrap table to display products in cart */}
 
-      <Col className='content-container'>
-      {(productsInCart.length > 0) ?
-      
-        <div>
-        <table className="table">
-          <thead className="thead-dark">
-            <tr>
-              <th scope="col">PRODUCT</th>
-              <th scope="col">PRICE</th>
-              <th scope="col">QUANTITY</th>
-              <th scope="col">TOTAL</th>
-            </tr>
-          </thead>
-          <tbody>
-            {productsInCart}
-            <tr>
-              <td></td>
-              <td></td>
-              <td>Total Cart</td>
-              <td>${parseFloat(cart.cartCost).toFixed(2)}</td>
-            </tr>
-          </tbody>
-        </table>
-        <Link to="/payment" onClick={handleToast} className="btn btn-success">
-          Proceed to payment
-        </Link>
-        </div>
-     
-      
-      
-     : <h4>No products in Cart</h4> }
-
-</Col>
-
-      
+      <Col className="content-container">
+        {productsInCart.length > 0 ? (
+          <div>
+            <table className="table">
+              <thead className="thead-dark">
+                <tr>
+                  <th scope="col">PRODUCT</th>
+                  <th scope="col">PRICE</th>
+                  <th scope="col">QUANTITY</th>
+                  <th scope="col">TOTAL</th>
+                </tr>
+              </thead>
+              <tbody>
+                {productsInCart}
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>Total Cart</td>
+                  <td>${parseFloat(cart.cartCost).toFixed(2)}</td>
+                </tr>
+              </tbody>
+            </table>
+            <Link
+              to="/payment"
+              onClick={handleToast}
+              className="btn btn-success"
+            >
+              Proceed to payment
+            </Link>
+          </div>
+        ) : (
+          <h4>No products in Cart</h4>
+        )}
+      </Col>
     </>
   );
 };
