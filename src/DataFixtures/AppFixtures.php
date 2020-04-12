@@ -41,11 +41,12 @@ class AppFixtures extends Fixture
                     $product = new Products();
                     $product->setName('Mug ' . $j);
                     $product->setPrice($faker->randomFloat(2, 15, 30));
+                    $product->setImages('mug' . $j);
                     $product->setNumbers(0);
                     $product->setInCart(false);
                     $manager->persist($product); 
                 }
-        //    } */
+   
     
 
 

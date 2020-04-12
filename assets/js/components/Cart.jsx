@@ -133,15 +133,21 @@ const Cart = () => {
                   <td>Total Cart</td>
                   <td>${parseFloat(cart.cartCost).toFixed(2)}</td>
                 </tr>
+
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td> </td>
+                  <Link
+                    to="/payment"
+                    onClick={handleToast}
+                    className="btn btn-success button-proceed"
+                  >
+                    Proceed to payment
+                  </Link>
+                </tr>
               </tbody>
             </table>
-            <Link
-              to="/payment"
-              onClick={handleToast}
-              className="btn btn-success"
-            >
-              Proceed to payment
-            </Link>
           </div>
         ) : (
           <h4>No products in Cart</h4>
