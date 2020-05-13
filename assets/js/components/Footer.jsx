@@ -17,7 +17,7 @@ const Footer = () => {
         </Col>
         <Col className="social">
           <a
-            href="http://127.0.0.1:8000/contact"
+            href="http://localhost:8000/contact"
             className="contact"
             height="352"
             width="470"

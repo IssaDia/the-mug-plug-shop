@@ -19,7 +19,7 @@ export const postUserSuccess =  (data) => {
 
 export const postUser = (data) => {
   return (dispatch) => {
-     axios.post("http://127.0.0.1:8000/api/users",data, {
+     axios.post("http://localhost:8000/api/users",data, {
       headers: {
           'Content-Type': 'application/json',
       }})

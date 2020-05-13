@@ -39,7 +39,7 @@ const Login = () => {
     event.preventDefault();
     try {
       const token = await axios
-        .post("http://127.0.0.1:8000/api/login_check", credentials)
+        .post("http://localhost:8000/api/login_check", credentials)
         .then(response => response.data.token);
       window.localStorage.setItem("authToken", token);
       axios.defaults.headers["Authorization"] = "Bearer" + token;
