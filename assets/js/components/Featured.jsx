@@ -1,7 +1,7 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React from "react"
+import { useSelector } from "react-redux"
+import { Container, Row, Col } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 {
   /* Widget to show products for sale*/
@@ -18,7 +18,8 @@ const Featured = () => {
     /*javascript function to get product with price below 20$ */
   }
 
-  let filter = products.filter(product => product.price < 20);
+  let filter = products.filter(product => product.price < 22);
+  
 
   {
     /*loop to display filtered products in cards*/
@@ -61,5 +62,6 @@ const Featured = () => {
     </div>
   );
 };
+
 
 export default Featured;

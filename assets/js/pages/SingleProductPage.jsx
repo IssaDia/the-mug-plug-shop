@@ -36,7 +36,7 @@ const SingleProductPage = props => {
       <Previous text="Previous"></Previous>
       <Breadcrumb>
         <Breadcrumb.Item href="/#">HOME</Breadcrumb.Item>
-        <Breadcrumb.Item>PRODUCTS</Breadcrumb.Item>
+        <Breadcrumb.Item href="/#/products">PRODUCTS</Breadcrumb.Item>
         <Breadcrumb.Item active>{product.name}</Breadcrumb.Item>
       </Breadcrumb>
       <div className="category-title">

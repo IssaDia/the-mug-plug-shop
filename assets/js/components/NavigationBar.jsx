@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 
 var FontAwesome = require("react-fontawesome");
 
+
 const NavigationBar = props => {
   useEffect(() => {
     const navSlide = () => {
