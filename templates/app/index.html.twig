@@ -13,9 +13,7 @@
 	<script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin/>
 
 
-	<script>
-		var Alert = ReactBootstrap.Alert;
-	</script>
+	
 	
 {% endblock %}
 
@@ -26,4 +24,7 @@
 
 {% block javascripts %}
 	{{ encore_entry_script_tags('app') }}
+	<script>
+		var Alert = ReactBootstrap.Alert;
+	</script>
 {% endblock %}
