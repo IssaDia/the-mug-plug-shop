@@ -1,11 +1,10 @@
 {% include 'base.html.twig' %}
 
 {% block stylesheets %}
-	<script
-	src="https://unpkg.com/react/umd/react.production.min.js" crossorigin/>
-	 Compiled and minified CSS 
-
-	Compiled and minified JavaScript 
+	<script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin/>
+	Compiled and minified CSS 
+	
+		Compiled and minified JavaScript
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 	<script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js" crossorigin/>
@@ -17,13 +16,10 @@
 
 {% endblock %}
 
-{% block body %}
+<body>
 	<div id="app" class=""></div>
 	{% block javascripts %}
-	{{ encore_entry_script_tags('app') }}
-	
-{% endblock %}
-{% endblock %}
+		{{ encore_entry_script_tags('app') }}
 
-
-
+	{% endblock %}
+</body>
