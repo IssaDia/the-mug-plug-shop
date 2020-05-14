@@ -19,12 +19,12 @@
 
 {% block body %}
 	<div id="app" class=""></div>
-
-{% endblock %}
-
-{% block javascripts %}
+	{% block javascripts %}
 	{{ encore_entry_script_tags('app') }}
 	<script>
 		var Alert = ReactBootstrap.Alert;
 	</script>
 {% endblock %}
+{% endblock %}
+
+
