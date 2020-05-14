@@ -11,6 +11,9 @@
 	<script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js" crossorigin/>
 
 	<script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin/>
+	<script>
+		var Alert = ReactBootstrap.Alert;
+	</script>
 
 
 	
@@ -21,10 +24,8 @@
 	<div id="app" class=""></div>
 	{% block javascripts %}
 	{{ encore_entry_script_tags('app') }}
-	<script>
-		var Alert = ReactBootstrap.Alert;
-	</script>
+	
 {% endblock %}
-{% endblock %}
+
 
 
