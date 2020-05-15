@@ -1,22 +1,21 @@
-import '../css/app.css';
-import '../css/app.scss';
-import React from "react";
-import ReactDOM from 'react-dom';
-import { HashRouter, Route, Switch} from 'react-router-dom';
-import NavigationBar from './components/NavigationBar';
-import Footer from './components/Footer';
-import NotFound from './components/NotFound';
-import Cart from './components/Cart';
-import Homepage from './pages/Homepage';
-import { Provider } from 'react-redux';
-import store from './store';
-import ProductPage from './pages/ProductPage';
-import SingleProductPage from './pages/SingleProductPage';
-import Connexion from './pages/Connexion';
-import ChatPage from './pages/ChatPage';
-import PaymentPage from './pages/PaymentPage';
-import { ToastContainer } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
+import '../css/app.css'
+import '../css/app.scss'
+import React from "react"
+import ReactDOM from 'react-dom'
+import { HashRouter, Route, Switch} from 'react-router-dom'
+import NavigationBar from './components/NavigationBar'
+import Footer from './components/Footer'
+import NotFound from './components/NotFound'
+import Cart from './components/Cart'
+import Homepage from './pages/Homepage' 
+import { Provider } from 'react-redux' 
+import store from './store' 
+import ProductPage from './pages/ProductPage' 
+import SingleProductPage from './pages/SingleProductPage' 
+import Connexion from './pages/Connexion' 
+import PaymentPage from './pages/PaymentPage' 
+import { ToastContainer } from 'react-toastify' 
+import "react-toastify/dist/ReactToastify.css" 
 
 
 
@@ -37,7 +36,6 @@ const App = () => {
                   <Route path="/products/:id" component={SingleProductPage}/>
                   <Route path="/products" component={ProductPage}/>
                   <Route path="/connexion" component={Connexion}/>
-                  <Route path="/chat" component={ChatPage}/>
                   <Route path="/payment" component={PaymentPage}/>
                   <Route exact path="/" component={Homepage}/>
                   <Route component={NotFound} /> 
@@ -51,7 +49,7 @@ const App = () => {
         toastClassName="dark-toast" />
     </>
 
-    );
+    ) 
 }
 
 const rootElement = document.querySelector('#app');

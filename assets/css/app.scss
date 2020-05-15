@@ -7,7 +7,7 @@
 body {
   background: #ffffff;
   font-family: 'Acme', sans-serif;
-  position: relative;
+  min-height: 100%;
 }
 
 
@@ -49,7 +49,6 @@ h4 {
   margin-top: 100px;
   font-size: 20px;
   margin-bottom: 100px;
-
 
 }
 
@@ -243,25 +242,17 @@ h6 {
 
 .footer {
   font-family: Raleway, sans-serif;
+  margin-top: 800px;
+  bottom:0;
+  height: 70px; 
   width: 100%;
-  margin: 2em 0;
-  height: 70px;
-  background-color: #000;
-  position: absolute;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0
+  background-color: black;
+  margin-left: 10px;
 }
 
-.copyright {
-  width: 50%;
-  float: left;
-
-}
 
 .footer p {
-  padding-left: 10%;
+  
   color: white;
   font-size: 0.7em;
   line-height: 70px;
@@ -276,9 +267,7 @@ h6 {
 }
 
 .social {
-  width: 50%;
-  float: right;
-
+  
   @media (max-width: 600px) {
     width: 100%;
   }
@@ -286,7 +275,7 @@ h6 {
 }
 
 .footer a {
-  float: left;
+  
   line-height: 70px;
   text-decoration: none;
   color: white;
@@ -304,19 +293,18 @@ footer .social a:hover {
 .git {
   background-color: #3D5B94;
   font-size: 1.2em;
-  width: 33%;
+  
 }
 
 .contact {
   background-color: #6dcd9a;
   font-size: 0.8em;
-  width: 33%;
+  
 }
 
 .linkedin {
   background-color: #1E83AE;
   font-size: 1.2em;
-  width: 33%;
 }
 
 

@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import { Container, Row, Col } from "react-bootstrap"
+import { Row, Col } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { addBasket } from "../actions/addBasket"
 import { toast } from "react-toastify"
@@ -97,9 +97,9 @@ const Featured = () => {
         <h2><span>Featured Products</span></h2>
         </div>
       <p className="featured-promo">Mugs for Sale</p>
-      <Container>
+      <div>
         <Row>{featuredProducts}</Row>
-      </Container>
+      </div>
       <Link to="/products">
         <p className="featured-link">Come to see all our mugs</p>
       </Link>

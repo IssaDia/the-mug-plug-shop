@@ -1,6 +1,4 @@
 import React from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 var FontAwesome = require("react-fontawesome");
 
@@ -10,33 +8,40 @@ var FontAwesome = require("react-fontawesome");
 
 const Footer = () => {
   return (
-    <footer>
-      <Row className="footer">
-        <Col className="copyright">
+    <footer className='footer row'>
+        <div className="copyright col-md-6">
           <p>2020 - The Mug Plug</p>
-        </Col>
-        <Col className="social">
-          <a
+        </div>
+        <div className="social col-md-6">
+          <div className='row'>
+            
+            <a
             href="https://fathomless-sea-60039.herokuapp.com/contact"
-            className="contact"
+            className="contact col-md-4"
             height="352"
             width="470"
           >
-            <span>
+            <div className=''>
+          <span>
               <FontAwesome name="fas fa-envelope" />
             </span>
+            </div>
           </a>
-          <a href="https://github.com/IssaDia/" className="git">
+            
+          <a href="https://github.com/IssaDia/" className="git col-md-4">
             Git
           </a>
           <a
             href="https://www.linkedin.com/in/issa-dia-4352b174/"
-            className="linkedin"
+            className="linkedin col-md-4"
           >
             in
           </a>
-        </Col>
-      </Row>
+
+          </div>
+         
+        </div>
+     
     </footer>
   );
 };
