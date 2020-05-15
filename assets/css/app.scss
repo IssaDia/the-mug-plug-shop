@@ -7,7 +7,7 @@
 body {
   background: #ffffff;
   font-family: 'Acme', sans-serif;
-
+  position: relative;
 }
 
 
@@ -247,7 +247,11 @@ h6 {
   margin: 2em 0;
   height: 70px;
   background-color: #000;
-  position: absolute; bottom: 0;
+  position: absolute;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0
 }
 
 .copyright {
