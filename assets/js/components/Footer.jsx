@@ -17,7 +17,7 @@ const Footer = () => {
         </Col>
         <Col className="social">
           <a
-            href="http://localhost:8000/contact"
+            href="https://fathomless-sea-60039.herokuapp.com/contact"
             className="contact"
             height="352"
             width="470"
