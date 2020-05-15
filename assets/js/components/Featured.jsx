@@ -1,6 +1,5 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import { Row, Col } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { addBasket } from "../actions/addBasket"
 import { toast } from "react-toastify"
@@ -46,7 +45,7 @@ const Featured = () => {
 
   let featuredProducts = filter.map(featuredProduct => {
     return (
-      <Col>
+      <div className='col-md-6'>
       <div className="wrapper">
         <div className="container-product">
           <img
@@ -87,7 +86,7 @@ const Featured = () => {
           <div className="contents"></div>
         </div>
       </div>
-    </Col>
+    </div>
     );
   });
 
@@ -98,7 +97,7 @@ const Featured = () => {
         </div>
       <p className="featured-promo">Mugs for Sale</p>
       <div>
-        <Row>{featuredProducts}</Row>
+        <div className='row'>{featuredProducts}</div>
       </div>
       <Link to="/products">
         <p className="featured-link">Come to see all our mugs</p>
