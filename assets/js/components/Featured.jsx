@@ -2,12 +2,29 @@ import React from "react"
 import { useSelector } from "react-redux"
 import { Container, Row, Col } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import { addBasket } from "../actions/addBasket"
+import { toast } from "react-toastify"
+import { getProduct } from "../actions/getProduct"
 
 {
   /* Widget to show products for sale*/
 }
 
 const Featured = () => {
+
+  {
+    /*hook to get redux actions*/
+  }
+
+  const dispatch = useDispatch();
+
+  {
+    /* flash message when trying to do a payment*/
+  }
+
+  const handleToast = () => {
+    toast.success(<div>Added to cart &#10003;</div>);
+  };
   {
     /*hook to get all products from store*/
   }
@@ -18,7 +35,7 @@ const Featured = () => {
     /*javascript function to get product with price below 20$ */
   }
 
-  let filter = products.filter(product => product.price < 22);
+  let filter = products.filter(product => product.price < 21);
   
 
   {
