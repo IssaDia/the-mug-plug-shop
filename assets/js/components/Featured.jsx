@@ -5,6 +5,8 @@ import { Link } from "react-router-dom"
 import { addBasket } from "../actions/addBasket"
 import { toast } from "react-toastify"
 import { getProduct } from "../actions/getProduct"
+import { useDispatch } from "react-redux"
+
 
 {
   /* Widget to show products for sale*/
