@@ -37,7 +37,7 @@ const Featured = () => {
     /*javascript function to get product with price below 20$ */
   }
 
-  let filter = products.filter(product => product.price < 21);
+  let filter = products.filter(product => product.price < 20.5);
   
 
   {
@@ -65,7 +65,7 @@ const Featured = () => {
                 <a
                   className="cart-click"
                   onClick={() => {
-                    dispatch(addBasket(props.id - 1));
+                    dispatch(addBasket(featuredProduct.id - 1));
                     handleToast();
                   }}
                 >
@@ -79,7 +79,7 @@ const Featured = () => {
           <div className="icon">
             <Link
               to={`/products/${featuredProduct.id}`}
-              onClick={() => dispatch(getProduct(props.id))}
+              onClick={() => dispatch(getProduct(featuredProduct.id))}
             >
               <i className="material-icons">info_outline</i>
             </Link>
