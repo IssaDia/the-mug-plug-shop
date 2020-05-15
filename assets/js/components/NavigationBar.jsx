@@ -56,7 +56,7 @@ const NavigationBar = props => {
                 </Link>
               </li>
               <li>
-                <a href="http://localhost:8000/contact" className="nav-link">
+                <a href="https://fathomless-sea-60039.herokuapp.com/contact" className="nav-link">
                   CONTACT
                 </a>
               </li>

@@ -27,23 +27,48 @@ const Featured = () => {
 
   let featuredProducts = filter.map(featuredProduct => {
     return (
-      <div className="wrapper-featured" key={featuredProduct.id}>
-        <img
-          src={require(`../../images/${featuredProduct.images}.jpeg`)}
-          alt=""
-          height="100"
-          width="100"
-          className="top"
-        ></img>
-        <div className="bottom">
-          <div className="left">
-            <div className="details">
-              <h1>{featuredProduct.name}</h1>
-              <span className="featured-price">{featuredProduct.price} $</span>
+      <Col>
+      <div className="wrapper">
+        <div className="container-product">
+          <img
+            src={require(`../../images/${featuredProduct.images}.jpeg`)}
+            alt=""
+            width="100%"
+            className="top"
+          ></img>
+          <div className="bottom">
+            <div className="left">
+              <div className="details">
+                <h1>{featuredProduct.name}</h1>
+                <p>${featuredProduct.price}</p>
+              </div>
+              <div className="buy">
+                <a
+                  className="cart-click"
+                  onClick={() => {
+                    dispatch(addBasket(props.id - 1));
+                    handleToast();
+                  }}
+                >
+                  <i className="material-icons">add_shopping_cart</i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
+        <div className="inside">
+          <div className="icon">
+            <Link
+              to={`/products/${featuredProduct.id}`}
+              onClick={() => dispatch(getProduct(props.id))}
+            >
+              <i className="material-icons">info_outline</i>
+            </Link>
+          </div>
+          <div className="contents"></div>
+        </div>
       </div>
+    </Col>
     );
   });
 

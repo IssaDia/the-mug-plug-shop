@@ -205,25 +205,31 @@ h6 {
 
 .bg-img {
   min-height: 400px;
-  background: #70e1f5;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ffd194, #70e1f5);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
   max-width: 100%;
   height: auto;
   /* Needed to position the navbar */
-  position: relative;
+  position: sticky;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
+
+
 
 .nav-container {
   position: absolute;
