@@ -28,4 +28,4 @@ yarn-error.log
 # /config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
 
-.env
+.env.test
